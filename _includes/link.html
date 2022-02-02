@@ -1,0 +1,18 @@
+<div class="site-link">
+  {% if thumbnail != '' %}
+  <a class="site-link" href="{{ url }}" target="_blank">
+    <img src="{{ thumbnail }}" alt="{{ name }}"/>
+  </a>
+  {% endif %}
+
+  <a href="{{ url }}" target="_blank">
+    <div class="site-info">
+      <div>
+        {{name}}
+      </div>
+      <div class="site-url">
+        {{url}}
+      </div>
+    </div>
+  </a>
+</div>

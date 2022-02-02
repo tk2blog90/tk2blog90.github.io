@@ -214,7 +214,7 @@ a {
 
   word-wrap: break-word;
 
-  :first-child {
+  .article-body > :first-child {
     margin-top: 0;
   }
 
@@ -231,6 +231,7 @@ a {
   @include small {
     padding-top: 2rem;
     padding-bottom: 2rem;
+    font-size: 15px;
 
     ul,
     ol {
@@ -271,6 +272,7 @@ a {
 
   p {
     margin-bottom: 1em;
+    line-height: 1.8em;
   }
 
   code {
@@ -347,6 +349,10 @@ a {
     margin-top: 0;
   }
 
+  li {
+    line-height: 1.8em;
+  }
+
   blockquote {
     padding: 0 1rem;
     margin-left: 0;
@@ -403,6 +409,65 @@ a {
     margin: 1rem 0;
     background-color: $hr-border-color;
     border: 0;
+  }
+
+  img {
+    border: 1px solid rgba(0, 0, 0, .1);
+    max-width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+    margin: 3em auto;
+  }
+
+  .site-link {
+    width: calc(100% - 30px);
+    max-width: 500px;
+    margin: 3em auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    transition: box-shadow .15s;
+
+    &:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, .16);
+    }
+
+    * {
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
+
+    img {
+      border: 1px solid rgba(0, 0, 0, .1);
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    .site-info {
+      display: block;
+      padding: 20px;
+      font-size: 1em;
+    }
+
+    .site-url {
+      font-size: 14px;
+      line-height: 1.8em;
+      color: rgba(0, 0, 0, .5);
+    }
+  }
+}
+
+.article-body {
+  ul, ol {
+    padding-left: 1.5em;
+  }
+
+  > ol, > ul {
+    padding-left: 0;
   }
 }
 

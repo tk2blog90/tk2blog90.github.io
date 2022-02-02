@@ -17,7 +17,7 @@ theme: # leave it empty
 
 # social
 author: tk2rush90
-image: /thumbnail-jumbo.png
+image: /thumbnail.png
 
 plugins:
   - jekyll-target-blank
