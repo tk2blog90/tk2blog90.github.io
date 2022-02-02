@@ -129,6 +129,18 @@ a {
   margin-top: $spacing-unit * 1.865;;
   position: relative;
 
+  &.daily-life {
+    background-image: linear-gradient(120deg, #5f97cf, #58cfa3);
+  }
+
+  &.dev {
+    background-image: linear-gradient(120deg, #953881, #35586c);
+  }
+
+  &.etc {
+    background-image: linear-gradient(120deg, #ccdae9, #e79938);
+  }
+
   @include large {
     padding: 5rem 6rem;
   }

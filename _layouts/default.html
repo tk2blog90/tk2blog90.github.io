@@ -74,6 +74,8 @@
 
         {% include site-header.html %}
 
+        {% assign header_class = page.ref %}
+
         {% if page.layout == 'home' %}
         {% assign page-tagline = site.description | default: site.github.project_tagline | escape %}
         {% endif %}
@@ -85,9 +87,10 @@
         {% endif %}
         {% if page.layout == 'post' %}
         {% assign page-tagline = page.tagline | escape  %}
+        {% assign header_class = page.category %}
         {% endif %}
 
-        <section class="page-header">
+        <section class="page-header {{ header_class }}">
             <h1 class="project-name">{{ page-title }}</h1>
             <h2 class="project-tagline">{{ page-tagline }}</h2>
 
