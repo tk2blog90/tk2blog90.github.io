@@ -2,8 +2,8 @@ title: 로그로그
 description: 세상에 나의 로그를 남기자
 show_downloads: false
 
-baseurl: "/blogv2" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
-url: "https://tk2rush90.github.io" # change this to the base hostname & protocol for your site
+baseurl: "/" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
+url: "https://tk2blog90.github.io" # change this to the base hostname & protocol for your site
 
 
 google_analytics:
