@@ -3,6 +3,7 @@
 @import "variables";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "blog";
 
 @mixin large {
@@ -34,6 +35,10 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
+}
+
+ul, ol {
+  list-style-position: inside;
 }
 
 #skip-to-content {
@@ -112,6 +117,13 @@ a {
   text-align: center;
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 300px;
+  margin-top: $spacing-unit * 1.865;;
+  position: relative;
 
   @include large {
     padding: 5rem 6rem;
@@ -119,10 +131,12 @@ a {
 
   @include medium {
     padding: 3rem 4rem;
+    min-height: 250px;
   }
 
   @include small {
     padding: 2rem 1rem;
+    min-height: 200px;
   }
 }
 
@@ -144,7 +158,6 @@ a {
 }
 
 .project-tagline {
-  margin-bottom: 2rem;
   font-weight: normal;
   opacity: 0.7;
 
@@ -162,10 +175,9 @@ a {
 }
 
 .project-date {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
   font-weight: normal;
   opacity: 0.7;
-  font-style: italic;
 
   @include large {
     font-size: 1.0rem;
@@ -181,6 +193,21 @@ a {
 }
 
 .main-content {
+  max-width: -webkit-calc(#{$navbar-width} - (#{$spacing-unit} * 2));
+  max-width: calc(#{$navbar-width} - (#{$spacing-unit} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$navbar-width} - (#{$spacing-unit}));
+    max-width: calc(#{$navbar-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+
   word-wrap: break-word;
 
   :first-child {
@@ -188,20 +215,18 @@ a {
   }
 
   @include large {
-    max-width: 64rem;
-    padding: 3rem 6rem;
-    margin: 0 auto;
-    font-size: 1.1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   @include medium {
-    padding: 3rem 4rem;
-    font-size: 1.1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   @include small {
-    padding: 2rem 1rem;
-    font-size: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     ul,
     ol {
@@ -246,7 +271,7 @@ a {
 
   code {
     padding: 2px 4px;
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: "Ubuntu Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 0.9rem;
     color: $code-text-color;
     background-color: $code-bg-color;
@@ -257,7 +282,7 @@ a {
     padding: 0.8rem;
     margin-top: 0;
     margin-bottom: 1rem;
-    font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font: 1rem "Ubuntu Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
     color: $code-text-color;
     word-wrap: normal;
     background-color: $code-bg-color;

@@ -11,23 +11,14 @@ layout: default
   <div>&nbsp;</div>
 
   <ul class="post-list">
-    {% if site.posts.size > 0 %}
-      {% for post in site.posts %}
-      {% assign post_ref = site.pages | where: "ref", post.category | first %}
+    {% assign categorized_posts = site.posts | where: "category", page.ref %}
 
+    {% if categorized_posts.size > 0 %}
+      {% for post in categorized_posts %}
       <li>
 
         {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">
-          {{ post.date | date: date_format }}
-
-          {% if post_ref.title %}
-            {% if post_ref.title contains "404" %}
-            {% else %}
-              {{ post_ref.en | escape }}
-            {% endif %}
-          {% endif %}
-        </span>
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
 
         <h2>
           <a class="post-link" href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
