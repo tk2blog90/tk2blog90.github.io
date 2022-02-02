@@ -41,6 +41,10 @@ ul, ol {
   list-style-position: inside;
 }
 
+#disqus_thread {
+  margin-top: 20em;
+}
+
 #skip-to-content {
   height: 1px;
   width: 1px;
@@ -493,7 +497,6 @@ a {
       width: 36px;
       height: 36px;
     }
-
   } // social-icons
 
 }
