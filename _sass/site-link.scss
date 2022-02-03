@@ -17,6 +17,7 @@
     img {
       @include box(100%);
       @include top-left;
+      border: none;
       position: absolute;
       object-fit: cover;
       display: block;
