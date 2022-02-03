@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tk2blog90.github.io/sitemap.xml
