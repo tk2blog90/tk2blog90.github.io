@@ -1,3 +1,9 @@
+## Local running command
+
+```
+bundle exec jekyll serve --livereload
+```
+
 ## Link layout
 
 ```
