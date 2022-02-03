@@ -1,0 +1,49 @@
+@import "mixins";
+@import "props";
+
+.site-link {
+  @include border(1px solid rgba($black, .15));
+  width: calc(100% - 30px);
+  max-width: 500px;
+  margin: 45px auto;
+
+  .thumbnail-link {
+    @include border-bottom(1px solid rgba($black, .15));
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 56%;
+
+    img {
+      @include box(100%);
+      @include top-left;
+      position: absolute;
+      object-fit: cover;
+      display: block;
+      box-sizing: border-box;
+      margin: 0;
+    }
+  }
+
+  .site-info {
+    display: block;
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .site-name {
+    transition: color .1s;
+  }
+
+  .site-url {
+    font-size: 14px;
+    line-height: 1.8em;
+    color: rgba(0, 0, 0, .5);
+  }
+
+  &:hover {
+    .site-name {
+      text-decoration: underline;
+    }
+  }
+}

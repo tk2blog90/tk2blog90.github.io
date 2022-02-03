@@ -1,29 +1,56 @@
 ---
 layout: default
 ---
+<!-- header -->
+<header class="page-header post-header">
+  <h1>
+    {{ page.title }}
+  </h1>
+
+  <p class="description">
+    {{ page.description }}
+  </p>
+
+  <p>
+    {{ page.date | date: site.date_format }}
+  </p>
+</header>
+
+<!-- content -->
 <article itemscope itemtype="http://schema.org/BlogPosting">
-
-  <!-- <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
-  </header> -->
-
-  <div class="article-body" itemprop="articleBody">
+  <div class="post-contents" itemprop="articleBody">
     {{ content }}
   </div>
 
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
+  <!--paginator-->
+  {% assign previous_title = '이전 포스트가 없습니다' %}
+  {% assign next_title = '다음 포스트가 없습니다' %}
+
+  {% if page.previous.url %}
+  {% assign previous_active = 'active' %}
+  {% assign previous_title = page.previous.title %}
   {% endif %}
 
+  {% if page.next.url %}
+  {% assign next_active = 'active' %}
+  {% assign next_title = page.next.title %}
+  {% endif %}
+
+  <div class="paginator">
+    <div class="flex">
+      <a class="left {{ previous_active }}" href="{{ page.previous.url | absolute_url }}">
+        {{ previous_title }}
+      </a>
+
+      <a class="right {{ next_active }}" href="{{ page.next.url | absolute_url }}">
+        {{ next_title }}
+      </a>
+    </div>
+  </div>
+
+  <!-- Disqus comments system -->
   <div id="disqus_thread"></div>
+
   <script>
     /**
      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -41,6 +68,8 @@ layout: default
       (d.head || d.body).appendChild(s);
     })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-    Disqus.</a></noscript>
+
+  <noscript>
+    Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
 </article>

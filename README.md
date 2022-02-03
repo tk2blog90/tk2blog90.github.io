@@ -10,7 +10,7 @@ bundle exec jekyll serve --livereload
 {% capture url %}{{ "" }}{% endcapture %}
 {% capture name %}{{ "" }}{% endcapture %}
 {% capture thumbnail %}{{ "" }}{% endcapture %}
-{% include link.html %}
+{% include site-link.html %}
 ```
 
 - `url` is required.

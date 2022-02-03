@@ -1,13 +1,13 @@
 <div class="site-link">
   {% if thumbnail != '' %}
-  <a class="site-link" href="{{ url }}" target="_blank">
+  <a class="no-style thumbnail-link" href="{{ url }}" target="_blank">
     <img src="{{ thumbnail }}" alt="{{ name }}"/>
   </a>
   {% endif %}
 
-  <a href="{{ url }}" target="_blank">
+  <a class="no-style" href="{{ url }}" target="_blank">
     <div class="site-info">
-      <div>
+      <div class="site-name">
         {{name}}
       </div>
       <div class="site-url">

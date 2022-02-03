@@ -1,0 +1,48 @@
+@import "mixins";
+@import "props";
+
+.page-header {
+  @include padding(18px 0);
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 14px;
+    color: rgba($black, .3);
+  }
+
+  .description {
+    font-size: 16px;
+    color: rgba($black, .6);
+
+    @include screen-under(767px) {
+      font-size: 14px;
+    }
+  }
+
+  // for post header
+  &.post-header {
+    @include border-bottom(1px solid rgba($black, .15));
+
+    p {
+      line-height: 1.8em;
+
+      @include screen-under(767px) {
+        font-size: 13px;
+      }
+    }
+
+    h1 {
+      @include screen-under(767px) {
+        font-size: 24px;
+      }
+    }
+  }
+}

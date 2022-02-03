@@ -1,0 +1,122 @@
+@import "mixins";
+@import "props";
+
+.owner-info {
+  @include padding(50px);
+  @include border-right(1px solid rgba($black, .15));
+  position: sticky;
+  height: 100%;
+  top: 0;
+
+  @include screen-under(1060px) {
+    @include padding(30px 60px 20px);
+    @include flex(center, space-between);
+    height: auto;
+    z-index: 100;
+    background-color: rgba($white, .5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 6px rgba($black, .15);
+  }
+
+  @include screen-under(767px) {
+    @include padding(25px 10px);
+  }
+
+  .owner-profile {
+    @include screen-under(1060px) {
+      @include flex(center);
+    }
+
+    @include screen-under(767px) {
+      // total - icon-width - margin
+      max-width: calc(100% - 24px - 20px);
+    }
+  }
+
+  .owner-description {
+    @include screen-under(1060px) {
+      margin-left: 10px;
+    }
+
+    @include screen-under(767px) {
+      // total - thumbnail-width - margin
+      max-width: calc(100% - 60px - 10px);
+    }
+  }
+
+  img {
+    @include ball(125px);
+    @include border(1px solid rgba($black, .15));
+    margin: 0 auto;
+
+    @include screen-under(1060px) {
+      @include ball(60px);
+    }
+  }
+
+  p {
+    margin: 0;
+    width: 170px;
+
+    @include screen-under(1060px) {
+      width: auto;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  p, a {
+    margin-top: 15px;
+
+    @include screen-under(1060px) {
+      margin: 0;
+    }
+  }
+
+  p {
+    @include screen-under(1060px) {
+      margin-top: 5px;
+    }
+  }
+
+  .name {
+    text-align: center;
+
+    @include screen-under(1060px) {
+      text-align: left;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+
+    @include screen-under(767px) {
+      margin-left: 20px;
+    }
+
+    span {
+      margin-left: 5px;
+
+      @include screen-under(1060px) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .image-link {
+    margin-top: 0;
+  }
+}

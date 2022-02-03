@@ -1,0 +1,57 @@
+@import "mixins";
+@import "props";
+
+.paginator {
+  @include border-top(1px solid rgba($black, .15));
+  margin-bottom: 35px;
+  position: relative;
+  font-size: 14px;
+
+  @include screen-under(767px) {
+    font-size: 13px;
+  }
+
+  .flex {
+    @include padding(13px 0);
+    @include flex(center, space-between);
+    @include box(100%);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    @include center;
+    text-align: center;
+    position: absolute;
+  }
+
+  a {
+    color: rgba($black, .3);
+    pointer-events: none;
+    user-select: none;
+
+    &.left {
+      left: 0;
+      text-align: left;
+      max-width: calc(50% - 40px);
+    }
+
+    &.right {
+      right: 0;
+      text-align: right;
+      max-width: calc(50% - 40px);
+    }
+
+    &.active {
+      color: $black;
+      pointer-events: all;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

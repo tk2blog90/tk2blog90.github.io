@@ -2,46 +2,92 @@
 layout: default
 ---
 
-<div>
+<!-- page header -->
+<header class="page-header">
+  <h1>
+    로그로그
+  </h1>
 
-  {{ content }}
+  <p>
+    세상에 나의 로그를 남기자
+  </p>
+</header>
 
-  <h2>Latest Posts</h2>
+<!-- navigation -->
 
-  <div>&nbsp;</div>
+{% if page.layout == 'home' %}
+{% assign home_class = 'active' %}
+{% endif %}
 
-  <ul class="post-list">
-    {% if site.posts.size > 0 %}
-      {% for post in site.posts %}
-      {% assign post_ref = site.pages | where: "ref", post.category | first %}
-
-      <li>
-
-        {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">
-          {{ post.date | date: date_format }}
-
-          {% if post_ref.title %}
-            {% if post_ref.title contains "404" %}
-            {% else %}
-              {{ post_ref.en | escape }}
-            {% endif %}
-          {% endif %}
+<nav class="navigation">
+  <ul>
+    <li>
+      <a class="{{ home_class }}" href="{{ '/' | absolute_url }}">
+        <span>
+          Home
         </span>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
-        </h2>
-
-        {{ post.excerpt | markdownify | truncatewords: 30 }}
-
-      </li>
-      {% endfor %}
-    {% else %}
-    <li>
-      등록된 포스트가 없습니다.
+        <div class="underline"></div>
+      </a>
     </li>
-    {% endif %}
   </ul>
 
+  <div class="underline"></div>
+</nav>
+
+<!-- post list -->
+
+<section class="post-list">
+  {% if paginator.posts.size > 0 %}
+    <ul>
+      {% for post in paginator.posts %}
+      <li class="post-item">
+        <a href="{{ post.url | absolute_url }}">
+          <!-- date -->
+          <span>{{ post.date | date: site.date_format }}</span>
+
+          <!-- title -->
+          <h2>
+            {{ post.title }}
+          </h2>
+
+          <div class="post-contents">
+            <!-- summary -->
+            {{ post.excerpt | markdownify | truncatewords: 30 }}
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <div class="empty">
+      포스트가 없습니다.
+    </div>
+  {% endif %}
+</section>
+
+<!-- pagination -->
+
+{% if paginator.previous_page != nil %}
+{% assign previous_active = 'active' %}
+{% endif %}
+
+{% if paginator.next_page != nil %}
+{% assign next_active = 'active' %}
+{% endif %}
+
+<div class="paginator">
+  <p>
+    {{ paginator.page }} / {{ paginator.total_pages }}
+  </p>
+
+  <div class="flex">
+    <a class="left {{ previous_active }}" href="{{ paginator.previous_page_path }}">
+      Previous Page
+    </a>
+
+    <a class="right {{ next_active }}" href="{{ paginator.next_page_path }}">
+      Next Page
+    </a>
+  </div>
 </div>
