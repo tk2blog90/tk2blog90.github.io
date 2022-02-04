@@ -22,8 +22,7 @@
   {% assign page_image = site.image | absolute_url %}
 {%endif %}
 
-{% assign abs_url = '' | absolute_url %}
-{% assign canonical_url = page.url | replace:'index.html','' | prepend: abs_url %}
+{% assign canonical_url = page.url | replace:'index.html','' | absolute_url %}
 
 <!-- Place this data between the <head> tags of your website -->
 {%if page_author %}
