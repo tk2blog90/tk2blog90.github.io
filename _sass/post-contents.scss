@@ -2,7 +2,15 @@
 @import "props";
 
 .post-contents {
-  margin: 35px 0;
+  margin: 50px 0;
+
+  @include screen-under(1060px) {
+    margin: 45px 0;
+  }
+
+  @include screen-under(767px) {
+    margin: 40px 0;
+  }
 
   kbd {
     background-color: #fafbfc;
