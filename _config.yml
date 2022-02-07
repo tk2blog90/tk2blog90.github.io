@@ -5,7 +5,7 @@ show_downloads: false
 baseurl: "/" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "https://tk2blog90.github.io" # change this to the base hostname & protocol for your site
 paginate_path: '/page:num/'
-paginate: 3
+paginate: 10
 
 google_analytics:
 
@@ -16,6 +16,7 @@ theme: # leave it empty
 # social
 author: tk2rush90
 image: /thumbnail.png
+keywords: 로그로그, 블로그, 개발블로그
 
 plugins:
   - jekyll-target-blank
