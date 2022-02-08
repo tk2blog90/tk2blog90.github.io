@@ -228,7 +228,7 @@ layout: default
             if (next) {
               const nextRect = next.getBoundingClientRect();
 
-              return (currentRect.y > -10 && currentRect.y < window.innerHeight)
+              return (currentRect.y > -getScrollAdjustValue() && currentRect.y < window.innerHeight)
                 || (currentRect.y < window.innerHeight && nextRect.y > window.innerHeight);
             } else {
               // If nothing found, return last header.
