@@ -181,6 +181,9 @@ layout: default
 
           if (header) {
             main.scrollTo(0, header.offsetTop + getScrollAdjustValue());
+          } else {
+            // If no header found, move to top.
+            main.scrollTo(0, 0);
           }
 
           // After scrolled, check the activated header.
