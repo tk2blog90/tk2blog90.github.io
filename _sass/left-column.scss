@@ -9,7 +9,7 @@
   height: 100%;
 
   @include screen-under(1060px) {
-    @include padding(30px 60px 20px);
+    @include padding(30px 60px);
     position: sticky;
     top: 0;
     height: auto;
