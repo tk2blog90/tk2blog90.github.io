@@ -82,7 +82,13 @@
 </head>
 <body>
   <main>
-    {% include owner-info.html %}
+    <div class="left-column">
+      {% include owner-info.html %}
+
+      {% if page.layout == 'post' %}
+      {% include table-of-content.html %}
+      {% endif %}
+    </div>
 
     <section class="container">
       {{ content }}

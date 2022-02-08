@@ -1,0 +1,87 @@
+@import "mixins";
+@import "props";
+
+.table-of-content {
+  margin-top: 30px;
+  width: 170px;
+
+  @include screen-under(1060px) {
+    margin-top: 15px;
+    width: 100%;
+
+    &.opened {
+      .contents, .div {
+        display: block;
+      }
+
+      .header .opener {
+        transform: rotate(180deg);
+      }
+    }
+
+    .contents, .div {
+      display: none;
+    }
+  }
+
+  @include screen-under(767px) {
+    margin-top: 5px;
+  }
+
+  .header {
+    @include flex(center, space-between);
+    height: 30px;
+
+    @include screen-under(1060px) {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .opener {
+      display: none;
+
+      @include screen-under(1060px) {
+        display: block;
+      }
+    }
+  }
+
+  .div {
+    @include rect(100%, 1px);
+    background-color: rgba($black, .15);
+    margin: 5px 0;
+  }
+
+  .contents {
+    overflow: auto;
+    max-height: 300px;
+
+    .content {
+      @include padding(5px 0);
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba($black, .3);
+      display: block;
+      word-break: break-word;
+
+      &.active {
+        color: $black;
+      }
+
+      &:not(.active):hover {
+        color: $riptide;
+      }
+
+      &.h2 { @include padding-left(10px) }
+      &.h3 { @include padding-left(20px) }
+      &.h4 { @include padding-left(30px) }
+      &.h5 { @include padding-left(40px) }
+      &.h6 { @include padding-left(50px) }
+    }
+  }
+}

@@ -69,6 +69,140 @@ layout: default
     })();
   </script>
 
+  <!-- table of content generator -->
+  <script>
+    (() => {
+      const HEADING_ATTRIBUTE = 'post-heading';
+      const TABLE_OF_CONTENT_ACTIVE_CLASS = 'active';
+      const TABLE_OF_CONTENT_OPENED_CLASS = 'opened';
+      const main = document.querySelector('main');
+      const tableOfContents = document.querySelector('.table-of-content');
+
+      if (main && tableOfContents) {
+        // The header of table of contents list.
+        const tableOfContentsHeader = tableOfContents.querySelector('.header');
+
+        // Created anchors will be appended to `anchors`.
+        const anchors = [];
+        const headers = searchHeaders();
+
+        if (headers.length > 0) {
+          const contentsContainer = tableOfContents.querySelector('.contents');
+
+          if (contentsContainer) {
+            headers.forEach(item => {
+              const anchor = renderAnchor(item);
+
+              contentsContainer.appendChild(anchor);
+              anchors.push(anchor);
+            });
+          }
+
+          if (anchors.length > 0) {
+
+            main.addEventListener('scroll', checkTheActivatedHeader);
+
+            // Check the activated header when first loaded.
+            checkTheActivatedHeader();
+          }
+        }
+
+        // Handle window resize event.
+        // If window resized, remove opened class from the table of content.
+        window.addEventListener('resize', () => {
+          tableOfContents.classList.remove(TABLE_OF_CONTENT_OPENED_CLASS);
+        });
+
+        // Handle table of contents header click event.
+        // Toggle the opened class for header when window size is under `1060px`
+        tableOfContentsHeader.addEventListener('click', () => {
+          if (window.innerWidth <= 1060) {
+            tableOfContents.classList.toggle(TABLE_OF_CONTENT_OPENED_CLASS);
+          }
+        });
+
+        /**
+         * Check the activated header.
+         * The `anchors` and `headers` should be initialized before calling this method.
+         */
+        function checkTheActivatedHeader() {
+          const activatedHeader = getActivatedHeader(headers);
+
+          highlightTableOfContents(anchors, activatedHeader);
+        }
+
+        /**
+         * Render content anchor.
+         * @param header {Element} The header element.
+         * @return {HTMLAnchorElement}
+         */
+        function renderAnchor(header) {
+          const anchor = document.createElement('a');
+
+          anchor.rel = 'nofollow';
+          anchor.href = `#${header.id}`;
+          anchor.innerText = header.textContent;
+          anchor.classList.add('content', header.tagName.toLowerCase());
+          anchor.setAttribute(HEADING_ATTRIBUTE, header.id);
+          anchor.addEventListener('click', checkTheActivatedHeader);
+
+          return anchor;
+        }
+
+        /**
+         * Search header elements from the post contents.
+         * @return {Element[]}
+         */
+        function searchHeaders() {
+          const body = document.querySelector('.post-contents');
+          const headers = [];
+
+          if (body) {
+            const results = body.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+            // Make NodeList to Array.
+            results.forEach(item => headers.push(item));
+          }
+
+          return headers;
+        }
+
+        /**
+         * Get the activated header which is showing in view first.
+         * @param headers {Element[]} The headers of contents.
+         * @return {Element | void}
+         */
+        function getActivatedHeader(headers) {
+          const header = headers.find(item => {
+            const rect = item.getBoundingClientRect();
+
+            // Find the first item that is showing in view.
+            // The reason why checking with `-10` is heading text covered a little by window top.
+            return rect.y > -10;
+          });
+
+          // If not found, return the last header.
+          return header || headers[headers.length - 1];
+        }
+
+        /**
+         * Set highlight to activated anchor.
+         * @param anchors {HTMLAnchorElement[]}
+         * @param header {Element}
+         */
+        function highlightTableOfContents(anchors, header) {
+          anchors.forEach(item => {
+            if (item.getAttribute(HEADING_ATTRIBUTE) === header.id) {
+              item.classList.add(TABLE_OF_CONTENT_ACTIVE_CLASS);
+            } else {
+              item.classList.remove(TABLE_OF_CONTENT_ACTIVE_CLASS);
+            }
+          });
+        }
+      }
+    })();
+  </script>
+
   <noscript>
     Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
