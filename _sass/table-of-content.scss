@@ -24,10 +24,6 @@
     }
   }
 
-  @include screen-under(767px) {
-    margin-top: 5px;
-  }
-
   .header {
     @include flex(center, space-between);
     height: 30px;
