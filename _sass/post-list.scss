@@ -71,3 +71,28 @@
     }
   }
 }
+
+// search field
+.search-field {
+  @include flex(center);
+  margin-top: 20px;
+
+  // search input
+  .search-input {
+    outline: 0;
+    border: 0;
+    height: 40px;
+
+    @include border(1px solid rgba($black, .15));
+    @include padding(0 10px);
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-family: "Noto Sans KR", sans-serif;
+
+    @include screen-under(424px) {
+      // {total} - {margin} - {icon width}
+      width: calc(100% - 10px - 24px);
+    }
+  }
+}

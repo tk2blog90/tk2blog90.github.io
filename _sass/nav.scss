@@ -39,6 +39,10 @@
         }
       }
     }
+
+    li + li {
+      margin-left: 20px;
+    }
   }
 
   > .underline {

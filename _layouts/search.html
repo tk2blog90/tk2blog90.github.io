@@ -1,0 +1,138 @@
+---
+layout: default
+---
+
+<!-- page header -->
+<header class="page-header">
+  <h1>
+    로그로그
+  </h1>
+
+  <p>
+    세상에 나의 로그를 남기자
+  </p>
+</header>
+
+<!-- navigation -->
+{% include navigation.html %}
+
+<div class="search-field">
+  <svg id="search_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path id="Path_45" data-name="Path 45"
+          fill="rgba(0, 0, 0, .15)"
+          d="M15.5,14h-.79l-.28-.27a6.518,6.518,0,1,0-.7.7l.27.28v.79l4.25,4.25a1.054,1.054,0,0,0,1.49-1.49Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z"/>
+  </svg>
+
+  <!-- search input -->
+  <input class="search-input" placeholder="검색어를 입력하세요" spellcheck="false"/>
+</div>
+
+<!-- post list -->
+<section class="post-list">
+  <ul>
+    {% if site.posts.size > 0 %}
+    {% for post in site.posts %}
+    <li class="post-item hidden">
+      <a href="{{ post.url | absolute_url }}">
+        <div>
+          <!-- date -->
+          <span>{{ post.date | date: site.date_format }}</span> <span>·</span> <span>{{ post.subject }}</span>
+        </div>
+
+        <!-- title -->
+        <h2>
+          {{ post.title }}
+        </h2>
+
+        <div class="post-contents">
+          <!-- summary -->
+          {{ post.excerpt | markdownify | truncatewords: 30 }}
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+    {% endif %}
+  </ul>
+
+  <div class="empty enter-search hidden">
+    검색어를 입력해주세요
+  </div>
+
+  <div class="empty no-result hidden">
+    검색 결과가 없습니다
+  </div>
+</section>
+
+<div class="paginator">
+</div>
+
+<script>
+  (() => {
+    const search = document.querySelector('.search-input');
+
+    // All posts.
+    const posts = toArray(document.querySelectorAll('.post-item'));
+
+    // Error messages.
+    const noResult = document.querySelector('.no-result');
+    const enterSearch = document.querySelector('.enter-search');
+
+    search.addEventListener('input', onSearchChange);
+
+    checkError();
+
+    /**
+     * Transform NodeList to Array.
+     * @param nodes {NodeList} NodeList.
+     * @return {Element[]}
+     */
+    function toArray(nodes) {
+      const array = [];
+
+      nodes.forEach(item => {
+        array.push(item);
+      });
+
+      return array;
+    }
+
+    /**
+     * Handle search field change event.
+     * @param event {Event} Event.
+     */
+    function onSearchChange(event) {
+      const value = event.target.value || '';
+
+      posts.forEach(item => {
+        const title = item.querySelector('h2')?.textContent;
+
+        if (value && title) {
+          const matched = title.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+
+          if (matched) {
+            item.classList.remove('hidden');
+            return;
+          }
+        }
+
+        item.classList.add('hidden');
+      });
+
+      checkError();
+    }
+
+    /**
+     * Check for the error messages.
+     */
+    function checkError() {
+      noResult.classList.add('hidden');
+      enterSearch.classList.add('hidden');
+
+      if (!search.value) {
+        enterSearch.classList.remove('hidden');
+      } else if (!posts.some(item => !item.classList.contains('hidden'))) {
+        noResult.classList.remove('hidden');
+      }
+    }
+  })();
+</script>
