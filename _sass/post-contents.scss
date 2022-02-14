@@ -1,6 +1,12 @@
 @import "mixins";
 @import "props";
 
+.post-header {
+  h1 {
+    font-weight: 500;
+  }
+}
+
 .post-contents {
   margin: 50px 0;
 
@@ -38,7 +44,7 @@
   h6 {
     margin-top: 2em;
     margin-bottom: 1em;
-    font-weight: 700;
+    font-weight: 500;
     word-break: break-word;
   }
 
@@ -52,6 +58,10 @@
   p {
     margin: 1.8em 0;
     line-height: 1.8em;
+  }
+
+  strong {
+    font-weight: 500;
   }
 
   a:not(.no-style) {
