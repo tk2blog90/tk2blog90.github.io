@@ -185,9 +185,14 @@ layout: default
        */
       function getActivatedHeader(headers) {
         return headers.find((current, index) => {
+          const prev = headers[index - 1];
           const next = headers[index + 1];
           const currentRect = current.getBoundingClientRect();
           const currentState = getElementPositionState(currentRect)
+
+          if (!prev && currentState === 'bottom') {
+            return true;
+          }
 
           if (next) {
             const nextRect = next.getBoundingClientRect();
