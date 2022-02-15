@@ -1,10 +1,9 @@
-title: 로그로그
+title: "로그로그 / 세상에 나의 로그를 남기자"
 description: 세상에 나의 로그를 남기자. 세상에 로그를 남기기 위한 개발자의 이런저런 이야기가 담긴 블로그.
-show_downloads: false
 
 baseurl: "/" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
-url: "https://tk2blog90.github.io/" # change this to the base hostname & protocol for your site
-paginate_path: '/page:num/'
+url: "https://tk2blog90.github.io" # change this to the base hostname & protocol for your site
+paginate_path: "/page:num/"
 paginate: 10
 
 theme: # leave it empty
@@ -17,9 +16,6 @@ keywords: 로그로그, 블로그, 개발블로그
 plugins:
   - jekyll-target-blank
   - jekyll-paginate
-
-gems:
-  - jekyll-target-blank
 
 target-blank:
     rel: "nofollow noopener"
