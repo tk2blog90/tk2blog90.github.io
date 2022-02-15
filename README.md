@@ -16,3 +16,9 @@ bundle exec jekyll serve --livereload
 - `url` is required.
 - `name` is required.
 - `thumbnail` is **not** required. Can be empty string.
+
+## Outer link
+
+```
+[](){:target="_blank" rel="nofollow noopener noreferrer"}
+```

@@ -18,9 +18,9 @@
 {% assign page_keywords = page.keywords | default: site.keywords %}
 
 {%if page.image %}
-  {% assign page_image = page.image | absolute_url %}
+  {% assign page_image = page.image | append: '?v=' | append: site.github.build_revision | absolute_url %}
 {%else if site.image %}
-  {% assign page_image = site.image | absolute_url %}
+  {% assign page_image = site.image | append: '?v=' | append: site.github.build_revision | absolute_url %}
 {%endif %}
 
 {% assign canonical_url = page.url | replace:'index.html','' | absolute_url %}
