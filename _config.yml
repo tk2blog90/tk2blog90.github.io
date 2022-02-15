@@ -9,7 +9,7 @@ paginate: 10
 
 google_analytics:
 
-date_format: "%b %-d, %Y"
+highlighter: none
 
 theme: # leave it empty
 

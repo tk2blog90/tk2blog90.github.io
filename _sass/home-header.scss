@@ -1,0 +1,36 @@
+@import "mixins";
+@import "props";
+
+// home header
+.home-header {
+  @include flex(center, null, column);
+  @include padding(63px 0);
+  background-color: $white;
+  text-align: center;
+
+  // description
+  .description {
+    margin-top: 10px;
+    line-height: 13px;
+  }
+
+  // links
+  .links {
+    @include flex(center, null, column);
+    margin-top: 30px;
+
+    a {
+      text-decoration: underline;
+      font-size: 13px;
+      line-height: 18px;
+
+      &:hover {
+        color: $night-rider;
+      }
+    }
+
+    a + a {
+      margin-top: 7px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import "mixins";
+@import "props";
+
+.logo {
+  .title {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .underline {
+    @include rect(100%, 1px);
+    margin-top: 2px;
+    background-color: $sunset-orange;
+  }
+}

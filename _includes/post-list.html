@@ -1,0 +1,17 @@
+<div class="post-list">
+  {% for post in paginator.posts %}
+  <a class="item" href="{{ post.url | absolute_url }}">
+    <h2>
+      {{ post.title }}
+    </h2>
+
+    <div class="text-grey date">
+      {{ post.date | date: '%-d %B, %Y'}}
+    </div>
+
+    <div class="description">
+      {{ post.excerpt | markdownify | truncatewords: 30 }}
+    </div>
+  </a>
+  {% endfor %}
+</div>

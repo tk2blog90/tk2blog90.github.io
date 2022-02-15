@@ -2,98 +2,34 @@
 @import "props";
 
 .post-list {
-  margin: 50px 0;
-
-  @include screen-under(1060px) {
-    margin: 45px 0;
-  }
-
-  @include screen-under(767px) {
-    margin: 40px 0;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  .empty {
-    @include padding(80px 0);
-    text-align: center;
-    font-size: 14px;
-    color: rgba($black, .3);
-  }
-
-  ul {
-    list-style: none;
-
-    li, a {
-      display: block;
-    }
-  }
-
-  .post-item {
-    span {
-      font-size: 14px;
-      color: rgba($black, .3);
-    }
-
-    h2 {
-      font-size: 24px;
-      font-weight: 500;
-      transition: color .1s;
-      margin: 5px 0;
-    }
-
-    .post-contents {
-      margin: 5px 0 0;
-
-      > * {
-        margin: 0;
-      }
-    }
+  .item {
+    @include padding-bottom(50px);
+    @include border-bottom(1px solid $whisper);
+    display: block;
 
     &:hover {
       h2 {
-        color: $riptide;
+        color: $valencia;
       }
     }
   }
 
-  .post-item + .post-item {
+  .item + .item {
     margin-top: 50px;
-
-    @include screen-under(1060px) {
-      margin-top: 45px;
-    }
-
-    @include screen-under(767px) {
-      margin-top: 40px;
-    }
   }
-}
 
-// search field
-.search-field {
-  @include flex(center);
-  margin-top: 20px;
+  h2 {
+    font-size: 28px;
+    font-weight: 400;
+  }
 
-  // search input
-  .search-input {
-    outline: 0;
-    border: 0;
-    height: 40px;
+  .date {
+    margin-top: 10px;
+    font-size: 13px;
+  }
 
-    @include border(1px solid rgba($black, .15));
-    @include padding(0 10px);
-    border-radius: 5px;
-    margin-left: 10px;
-    font-size: 14px;
-    font-family: "Noto Sans KR", sans-serif;
-
-    @include screen-under(424px) {
-      // {total} - {margin} - {icon width}
-      width: calc(100% - 10px - 24px);
-    }
+  .description {
+    margin-top: 30px;
+    line-height: 1.8em;
   }
 }
