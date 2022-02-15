@@ -4,7 +4,7 @@ description: 세상에 나의 로그를 남기자. 세상에 로그를 남기기
 baseurl: "/" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "https://tk2blog90.github.io" # change this to the base hostname & protocol for your site
 paginate_path: "/page:num/"
-paginate: 10
+paginate: 6
 
 markdown: kramdown
 kramdown:

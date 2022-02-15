@@ -18,8 +18,12 @@
       pointer-events: none;
     }
 
-    &:not([href='']):hover {
+    &:not([href='']) {
       color: $night-rider;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
