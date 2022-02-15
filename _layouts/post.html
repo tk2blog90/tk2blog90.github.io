@@ -29,206 +29,197 @@ layout: default
   (() => {
     const HEADING_ATTRIBUTE = 'post-heading';
     const TABLE_OF_CONTENT_ACTIVE_CLASS = 'active';
-    const TABLE_OF_CONTENT_OPENED_CLASS = 'opened';
-    const tableOfContents = document.querySelector('.table-of-content');
+    const tableOfContents = document.querySelectorAll('.table-of-content');
 
-    if (tableOfContents) {
-      // Created anchors will be appended to `anchors`.
-      const anchors = [];
-      const headers = searchHeaders();
+    tableOfContents.forEach(tableOfContent => {
+      if (tableOfContent) {
+        // Created anchors will be appended to `anchors`.
+        const anchors = [];
+        const headers = searchHeaders();
 
-      if (headers.length > 0) {
-        const contentsContainer = tableOfContents.querySelector('.contents');
+        if (headers.length > 0) {
+          const contentsContainer = tableOfContent.querySelector('.contents');
 
-        if (contentsContainer) {
-          headers.forEach(item => {
-            const anchor = renderAnchor(item);
+          if (contentsContainer) {
+            headers.forEach(item => {
+              const anchor = renderAnchor(item);
 
-            contentsContainer.appendChild(anchor);
-            anchors.push(anchor);
+              contentsContainer.appendChild(anchor);
+              anchors.push(anchor);
+            });
+          }
+
+          if (anchors.length > 0) {
+            window.addEventListener('scroll', checkTheActivatedHeader);
+
+            // Check the activated header when first loaded.
+            checkTheActivatedHeader();
+          }
+        }
+
+        window.addEventListener('hashchange', scrollToHeader);
+
+        /**
+         * Render content anchor.
+         * @param header {Element} The header element.
+         * @return {HTMLAnchorElement}
+         */
+        function renderAnchor(header) {
+          const anchor = document.createElement('a');
+
+          anchor.rel = 'nofollow';
+          anchor.href = `#${header.id}`;
+          anchor.innerText = header.textContent;
+          anchor.classList.add('content', header.tagName.toLowerCase());
+          anchor.setAttribute(HEADING_ATTRIBUTE, header.id);
+          anchor.addEventListener('click', (e) => {
+            // Suppress the default event to call the hashchange event programatically
+            // and change the `location.href` with header id and adjust the scroll position by window size.
+            // If following codes removed, the scroll trembled since
+            // it moves the scroll by default, and then the `scrollToHeader()` of `hashchange` event is triggered.
+            // Using default behavior of anchor tag is hard to catch the timing to run scroll adjust code.
+            e.preventDefault();
+
+            location.href = location.origin + location.pathname + `#${header.id}`;
+
+            window.scrollBy(0, getScrollAdjustValue());
+          });
+
+          return anchor;
+        }
+
+        /**
+         * Get scroll adjust value.
+         * This is the height of `left-column`.
+         * @return {number} The value of `left-column` for mobile.
+         */
+        function getScrollAdjustValue() {
+          return -90;
+        }
+
+        /**
+         * Scroll to header element by adjusting the position according to screen width.
+         */
+        function scrollToHeader() {
+          const headerId = location.hash;
+          const header = document.querySelector(decodeURIComponent(headerId));
+
+          if (header) {
+            window.scrollTo(0, header.offsetTop + getScrollAdjustValue());
+          } else {
+            // If no header found, move to top.
+            window.scrollTo(0, 0);
+          }
+
+          // After scrolled, check the activated header.
+          checkTheActivatedHeader();
+        }
+
+        /**
+         * Check the activated header.
+         * The `anchors` and `headers` should be initialized before calling this method.
+         */
+        function checkTheActivatedHeader() {
+          const activatedHeader = getActivatedHeader(headers);
+
+          if (activatedHeader) {
+            highlightTableOfContents(anchors, activatedHeader);
+          }
+        }
+
+        /**
+         * Search header elements from the post contents.
+         * @return {Element[]}
+         */
+        function searchHeaders() {
+          const body = document.querySelector('.post-contents');
+          const headers = [];
+
+          if (body) {
+            const results = body.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+            // Make NodeList to Array.
+            results.forEach(item => headers.push(item));
+          }
+
+          return headers;
+        }
+
+        /**
+         * Get the positioned state of element.
+         * @param rect {DOMRect} The element DOMRect.
+         * @return {'view' | 'top' | 'bottom'}
+         */
+        function getElementPositionState(rect) {
+          const adjust = -getScrollAdjustValue();
+
+          if (
+            (rect.top >= adjust && rect.top < window.innerHeight)
+            || (rect.top < adjust && rect.bottom >= adjust)
+          ) {
+            // The element is in the view.
+            return 'view';
+          } else if (rect.bottom < adjust) {
+            // The element is over top of the view.
+            return 'top';
+          } else if (rect.top > window.innerHeight) {
+            // The element is over bottom of the view.
+            return 'bottom';
+          }
+        }
+
+        /**
+         * Get the activated header which is showing in view first.
+         * @param headers {Element[]} The headers of contents.
+         * @return {Element}
+         */
+        function getActivatedHeader(headers) {
+          return headers.find((current, index) => {
+            const prev = headers[index - 1];
+            const next = headers[index + 1];
+            const currentRect = current.getBoundingClientRect();
+            const currentState = getElementPositionState(currentRect)
+
+            if (!prev && currentState === 'bottom') {
+              return true;
+            }
+
+            if (next) {
+              const nextRect = next.getBoundingClientRect();
+              const nextState = getElementPositionState(nextRect);
+
+              if (
+                (currentState !== 'bottom' && nextState === 'bottom')
+              ) {
+                return true;
+              }
+
+              if (currentState === 'view') {
+                return true;
+              }
+            } else {
+              // If nothing found, return last header.
+              return true;
+            }
           });
         }
 
-        if (anchors.length > 0) {
-
-          window.addEventListener('scroll', checkTheActivatedHeader);
-
-          // Check the activated header when first loaded.
-          checkTheActivatedHeader();
-        }
-      }
-
-      // Handle window resize event.
-      // If window resized, remove opened class from the table of content.
-      window.addEventListener('resize', () => {
-        tableOfContents.classList.remove(TABLE_OF_CONTENT_OPENED_CLASS);
-      });
-
-      window.addEventListener('hashchange', scrollToHeader);
-
-      /**
-       * Render content anchor.
-       * @param header {Element} The header element.
-       * @return {HTMLAnchorElement}
-       */
-      function renderAnchor(header) {
-        const anchor = document.createElement('a');
-
-        anchor.rel = 'nofollow';
-        anchor.href = `#${header.id}`;
-        anchor.innerText = header.textContent;
-        anchor.classList.add('content', header.tagName.toLowerCase());
-        anchor.setAttribute(HEADING_ATTRIBUTE, header.id);
-        anchor.addEventListener('click', (e) => {
-          // Close the table of contents.
-          tableOfContents.classList.remove('opened');
-
-          // Suppress the default event to call the hashchange event programatically
-          // and change the `location.href` with header id and adjust the scroll position by window size.
-          // If following codes removed, the scroll trembled since
-          // it moves the scroll by default, and then the `scrollToHeader()` of `hashchange` event is triggered.
-          // Using default behavior of anchor tag is hard to catch the timing to run scroll adjust code.
-          e.preventDefault();
-
-          location.href = location.origin + location.pathname + `#${header.id}`;
-
-          window.scrollBy(0, getScrollAdjustValue());
-        });
-
-        return anchor;
-      }
-
-      /**
-       * Get scroll adjust value.
-       * This is the height of `left-column`.
-       * @return {number} The value of `left-column` for mobile.
-       */
-      function getScrollAdjustValue() {
-        return -90;
-      }
-
-      /**
-       * Scroll to header element by adjusting the position according to screen width.
-       */
-      function scrollToHeader() {
-        const headerId = location.hash;
-        const header = document.querySelector(decodeURIComponent(headerId));
-
-        if (header) {
-          window.scrollTo(0, header.offsetTop + getScrollAdjustValue());
-        } else {
-          // If no header found, move to top.
-          window.scrollTo(0, 0);
-        }
-
-        // After scrolled, check the activated header.
-        checkTheActivatedHeader();
-      }
-
-      /**
-       * Check the activated header.
-       * The `anchors` and `headers` should be initialized before calling this method.
-       */
-      function checkTheActivatedHeader() {
-        const activatedHeader = getActivatedHeader(headers);
-
-        if (activatedHeader) {
-          highlightTableOfContents(anchors, activatedHeader);
-        }
-      }
-
-      /**
-       * Search header elements from the post contents.
-       * @return {Element[]}
-       */
-      function searchHeaders() {
-        const body = document.querySelector('.post-contents');
-        const headers = [];
-
-        if (body) {
-          const results = body.querySelectorAll('h1, h2, h3, h4, h5, h6');
-
-          // Make NodeList to Array.
-          results.forEach(item => headers.push(item));
-        }
-
-        return headers;
-      }
-
-      /**
-       * Get the positioned state of element.
-       * @param rect {DOMRect} The element DOMRect.
-       * @return {'view' | 'top' | 'bottom'}
-       */
-      function getElementPositionState(rect) {
-        const adjust = -getScrollAdjustValue();
-
-        if (
-          (rect.top >= adjust && rect.top < window.innerHeight)
-          || (rect.top < adjust && rect.bottom >= adjust)
-        ) {
-          // The element is in the view.
-          return 'view';
-        } else if (rect.bottom < adjust) {
-          // The element is over top of the view.
-          return 'top';
-        } else if (rect.top > window.innerHeight) {
-          // The element is over bottom of the view.
-          return 'bottom';
-        }
-      }
-
-      /**
-       * Get the activated header which is showing in view first.
-       * @param headers {Element[]} The headers of contents.
-       * @return {Element}
-       */
-      function getActivatedHeader(headers) {
-        return headers.find((current, index) => {
-          const prev = headers[index - 1];
-          const next = headers[index + 1];
-          const currentRect = current.getBoundingClientRect();
-          const currentState = getElementPositionState(currentRect)
-
-          if (!prev && currentState === 'bottom') {
-            return true;
-          }
-
-          if (next) {
-            const nextRect = next.getBoundingClientRect();
-            const nextState = getElementPositionState(nextRect);
-
-            if (
-              (currentState !== 'bottom' && nextState === 'bottom')
-            ) {
-              return true;
+        /**
+         * Set highlight to activated anchor.
+         * @param anchors {HTMLAnchorElement[]}
+         * @param header {Element}
+         */
+        function highlightTableOfContents(anchors, header) {
+          anchors.forEach(item => {
+            if (item.getAttribute(HEADING_ATTRIBUTE) === header.id) {
+              item.classList.add(TABLE_OF_CONTENT_ACTIVE_CLASS);
+            } else {
+              item.classList.remove(TABLE_OF_CONTENT_ACTIVE_CLASS);
             }
-
-            if (currentState === 'view') {
-              return true;
-            }
-          } else {
-            // If nothing found, return last header.
-            return true;
-          }
-        });
+          });
+        }
       }
-
-      /**
-       * Set highlight to activated anchor.
-       * @param anchors {HTMLAnchorElement[]}
-       * @param header {Element}
-       */
-      function highlightTableOfContents(anchors, header) {
-        anchors.forEach(item => {
-          if (item.getAttribute(HEADING_ATTRIBUTE) === header.id) {
-            item.classList.add(TABLE_OF_CONTENT_ACTIVE_CLASS);
-          } else {
-            item.classList.remove(TABLE_OF_CONTENT_ACTIVE_CLASS);
-          }
-        });
-      }
-    }
+    })
   })();
 </script>
 {% endraw %}

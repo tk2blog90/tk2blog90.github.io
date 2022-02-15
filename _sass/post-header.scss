@@ -49,6 +49,12 @@
   }
 
   .post-header-table-of-content {
+    display: none;
+
+    @include screen-under(1200px) {
+      display: block;
+    }
+
     .table-of-content {
       display: block;
       margin-left: 0;
