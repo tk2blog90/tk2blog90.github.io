@@ -20,6 +20,9 @@ plugins:
   - jekyll-target-blank
   - jekyll-paginate
 
+gems:
+  - jekyll-target-blank
+
 target-blank:
     rel: nofollow
 
