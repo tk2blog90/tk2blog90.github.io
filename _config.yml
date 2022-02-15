@@ -22,5 +22,5 @@ gems:
   - jekyll-target-blank
 
 target-blank:
-    rel: nofollow
-
+    rel: "nofollow noopener"
+    target: "_blank"
