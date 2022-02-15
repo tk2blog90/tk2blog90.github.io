@@ -7,8 +7,6 @@ url: "https://tk2blog90.github.io" # change this to the base hostname & protocol
 paginate_path: '/page:num/'
 paginate: 10
 
-google_analytics:
-
 highlighter: none
 
 theme: # leave it empty
