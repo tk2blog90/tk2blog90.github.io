@@ -6,7 +6,10 @@ url: "https://tk2blog90.github.io" # change this to the base hostname & protocol
 paginate_path: "/page:num/"
 paginate: 10
 
-theme: # leave it empty
+markdown: kramdown
+kramdown:
+    syntax_highlighter_opts:
+        disable: true
 
 # social
 author: tk2rush90
@@ -14,9 +17,4 @@ image: /thumbnail.png
 keywords: 로그로그, 블로그, 개발블로그
 
 plugins:
-  - jekyll-target-blank
   - jekyll-paginate
-
-target-blank:
-    rel: "nofollow noopener"
-    target: "_blank"
