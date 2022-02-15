@@ -5,7 +5,8 @@
   @include border(1px solid rgba($black, .15));
   width: calc(100% - 30px);
   max-width: 500px;
-  margin: 45px auto;
+  margin: 50px auto;
+  background-color: $white;
 
   .thumbnail-link {
     @include border-bottom(1px solid rgba($black, .15));
@@ -23,6 +24,7 @@
       display: block;
       box-sizing: border-box;
       margin: 0;
+      max-width: none;
     }
   }
 
@@ -40,7 +42,6 @@
     line-height: 1.8em;
     color: rgba(0, 0, 0, .5);
     word-break: break-all;
-    margin-top: .8em;
   }
 
   &:hover {

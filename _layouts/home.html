@@ -2,75 +2,13 @@
 layout: default
 ---
 
-<!-- page header -->
-<header class="page-header">
-  <h1>
-    로그로그
-  </h1>
+<div class="home">
+  {% include home-header.html %}
 
-  <p>
-    세상에 나의 로그를 남기자
-  </p>
-</header>
-
-<!-- navigation -->
-{% include navigation.html %}
-
-<!-- post list -->
-
-<section class="post-list">
-  {% if paginator.posts.size > 0 %}
-    <ul>
-      {% for post in paginator.posts %}
-      <li class="post-item">
-        <a href="{{ post.url | absolute_url }}">
-          <div>
-            <!-- date -->
-            <span>{{ post.date | date: site.date_format }}</span> <span>·</span> <span>{{ post.subject }}</span>
-          </div>
-
-          <!-- title -->
-          <h2>
-            {{ post.title }}
-          </h2>
-
-          <div class="post-contents">
-            <!-- summary -->
-            {{ post.excerpt | markdownify | truncatewords: 30 }}
-          </div>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <div class="empty">
-      포스트가 없습니다.
+  <main>
+    <div class="container">
+      {% include post-list.html %}
+      {% include paginator.html %}
     </div>
-  {% endif %}
-</section>
-
-<!-- pagination -->
-
-{% if paginator.previous_page != nil %}
-{% assign previous_active = 'active' %}
-{% endif %}
-
-{% if paginator.next_page != nil %}
-{% assign next_active = 'active' %}
-{% endif %}
-
-<div class="paginator">
-  <p>
-    {{ paginator.page }} / {{ paginator.total_pages }}
-  </p>
-
-  <div class="flex">
-    <a class="left {{ previous_active }}" href="{{ paginator.previous_page_path }}">
-      Previous Page
-    </a>
-
-    <a class="right {{ next_active }}" href="{{ paginator.next_page_path }}">
-      Next Page
-    </a>
-  </div>
+  </main>
 </div>
