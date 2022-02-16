@@ -34,10 +34,6 @@
       </span>
 
       <span>
-        2nd <em class="second"></em>
-      </span>
-
-      <span>
         Total <em class="total"></em>
       </span>
     </div>
@@ -58,11 +54,9 @@
           winnings.classList.remove('hidden');
 
           const first = winnings.querySelector('.first');
-          const second = winnings.querySelector('.second');
           const total = winnings.querySelector('.total');
 
-          first.textContent = res.data['1st'];
-          second.textContent = res.data['2nd'];
+          first.textContent = res.data.wins;
           total.textContent = res.data.total;
         }
       })
