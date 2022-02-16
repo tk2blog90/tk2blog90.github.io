@@ -32,7 +32,12 @@
       }
 
       &:not(.active):hover {
-        color: $riptide;
+        color: $sunset-orange;
+
+        @include screen-under(767px) {
+          color: $silver;
+          animation: table-of-content-blink .5s;
+        }
       }
 
       &.h2 { @include padding-left(10px) }
@@ -45,5 +50,19 @@
     .content + .content {
       margin-top: 10px;
     }
+  }
+}
+
+@keyframes table-of-content-blink {
+  0% {
+    color: $silver;
+  }
+
+  50% {
+    color: $sunset-orange;
+  }
+
+  100% {
+    color: $silver;
   }
 }

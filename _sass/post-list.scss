@@ -10,6 +10,11 @@
     &:hover {
       h2 {
         color: $valencia;
+
+        @include screen-under(767px) {
+          color: $night-rider;
+          animation: post-blink .5s;
+        }
       }
     }
   }
@@ -31,5 +36,19 @@
   .description {
     margin-top: 30px;
     line-height: 1.8em;
+  }
+}
+
+@keyframes post-blink {
+  0% {
+    color: $night-rider;
+  }
+
+  50% {
+    color: $valencia;
+  }
+
+  100% {
+    color: $night-rider;
   }
 }

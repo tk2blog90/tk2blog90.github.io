@@ -26,11 +26,30 @@
 
       &:hover {
         color: $night-rider;
+
+        @include screen-under(767px) {
+          color: $grey;
+          animation: link-blink .5s;
+        }
       }
     }
 
     a + a {
       margin-top: 7px;
     }
+  }
+}
+
+@keyframes link-blink {
+  0% {
+    color: $grey;
+  }
+
+  50% {
+    color: $night-rider;
+  }
+
+  100% {
+    color: $grey;
   }
 }

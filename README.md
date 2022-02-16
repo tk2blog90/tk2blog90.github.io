@@ -20,5 +20,6 @@ bundle exec jekyll serve --livereload
 ## Outer link
 
 ```
+{:target="_blank"}
 [](){:target="_blank" rel="nofollow noopener noreferrer"}
 ```
