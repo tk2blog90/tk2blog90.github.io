@@ -21,5 +21,56 @@
       rel="nofollow noopener noreferrer">
       Topcoder
     </a>
+
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="winnings hidden">
+      <span>
+        1st <em class="first"></em>
+      </span>
+
+      <span>
+        2nd <em class="second"></em>
+      </span>
+
+      <span>
+        Total <em class="total"></em>
+      </span>
+    </div>
   </div>
 </header>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+  (() => {
+    const winnings = document.querySelector('.home-header .winnings');
+    const loading = document.querySelector('.home-header .loading');
+
+    axios
+      .get('https://tk2-backend.herokuapp.com/topcoder/winnings')
+      .then(res => {
+        if (winnings) {
+          winnings.classList.remove('hidden');
+
+          const first = winnings.querySelector('.first');
+          const second = winnings.querySelector('.second');
+          const total = winnings.querySelector('.total');
+
+          first.textContent = res.data['1st'];
+          second.textContent = res.data['2nd'];
+          total.textContent = res.data.total;
+        }
+      })
+      .catch(e => {
+        console.error(e);
+      })
+      .finally(() => {
+        loading.classList.add('hidden');
+      });
+  })();
+</script>
