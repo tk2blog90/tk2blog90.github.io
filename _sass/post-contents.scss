@@ -102,11 +102,20 @@
 
   ul,
   ol {
-    margin-top: 0;
+    margin: 40px 0;
   }
 
   li {
+    list-style-type: none;
     line-height: 1.8em;
+
+    &::before {
+      content: '-';
+      margin-right: 5px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -3px;
+    }
   }
 
   blockquote {

@@ -1,9 +1,9 @@
 <div class="other-posts">
-  <a href="{{ page.previous.url | absolute_url }}" class="text-silver">
-    <span>이전: </span>{{ page.previous.title | default: '이전 포스트가 없습니다' }}
-  </a>
-
   <a href="{{ page.next.url | absolute_url }}" class="text-silver">
     <span>다음: </span>{{ page.next.title | default: '다음 포스트가 없습니다' }}
+  </a>
+
+  <a href="{{ page.previous.url | absolute_url }}" class="text-silver">
+    <span>이전: </span>{{ page.previous.title | default: '이전 포스트가 없습니다' }}
   </a>
 </div>

@@ -78,6 +78,8 @@
       if (headerTableOfContent) {
         headerTableOfContent.classList.remove('hidden');
       }
+
+      addClickEventToContentHeadings();
     }
 
     function closeTableOfContents() {
@@ -86,16 +88,28 @@
       if (headerTableOfContent) {
         headerTableOfContent.classList.add('hidden');
       }
+
+      removeClickEventFromContentHeadings();
     }
 
-    setTimeout(() => {
+    function addClickEventToContentHeadings() {
       if (headerTableOfContent) {
         const contents = headerTableOfContent.querySelectorAll('.content');
 
         contents.forEach(content => {
-          content.addEventListener('click', () => closeTableOfContents());
+          content.addEventListener('click', closeTableOfContents);
         });
       }
-    })
+    }
+
+    function removeClickEventFromContentHeadings() {
+      if (headerTableOfContent) {
+        const contents = headerTableOfContent.querySelectorAll('.content');
+
+        contents.forEach(content => {
+          content.removeEventListener('click', closeTableOfContents);
+        });
+      }
+    }
   })();
 </script>
