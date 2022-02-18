@@ -21,8 +21,7 @@ layout: default
       const noValue = searchList.querySelector('.no-value');
 
       input.addEventListener('input', handleInputChange);
-
-      handleInputChange();
+      window.addEventListener('load', handleInputChange);
 
       /**
        * Handle search input change event.
