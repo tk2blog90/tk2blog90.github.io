@@ -106,8 +106,11 @@
   }
 
   li {
-    list-style-type: none;
     line-height: 1.8em;
+  }
+
+  ul > li {
+    list-style-type: none;
 
     &::before {
       content: '-';
