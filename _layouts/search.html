@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<div>
+  {% include search-header.html %}
+
+  <div class="container">
+    {% include search-list.html %}
+  </div>
+</div>
+
+<script>
+  (() => {
+    const input = document.querySelector('.search-header input');
+    const searchList = document.querySelector('.search-list');
+
+    if (input && searchList) {
+      const items = nodeListToArray(searchList.querySelectorAll('.item'));
+      const empty = searchList.querySelector('.empty');
+      const noValue = searchList.querySelector('.no-value');
+
+      input.addEventListener('input', handleInputChange);
+
+      handleInputChange();
+
+      /**
+       * Handle search input change event.
+       */
+      function handleInputChange() {
+        const value = input.value;
+
+        // Hide all contents
+        items.forEach(item => hide(item));
+        hide(empty);
+        hide(noValue);
+
+        if (!value) {
+          show(noValue);
+        } else {
+          const filtered = items.filter(item => {
+            const title = item.querySelector('h2')?.textContent || '';
+
+            if (title) {
+              const matched = title.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+
+              if (matched) {
+                show(item);
+              }
+
+              return matched;
+            }
+          });
+
+          if (filtered.length === 0) {
+            show(empty);
+          }
+        }
+      }
+
+      /**
+       * Hide the element.
+       * @param element {HTMLElement} HTML Element.
+       */
+      function hide(element) {
+        element.classList.add('hidden');
+      }
+
+      /**
+       * Show the element.
+       * @param element {HTMLElement} HTML Element.
+       */
+      function show(element) {
+        element.classList.remove('hidden');
+      }
+
+      /**
+       * Transform node list to array.
+       * @param list {NodeList} Node list.
+       */
+      function nodeListToArray(list) {
+        const arr = [];
+
+        list.forEach(item => arr.push(item));
+
+        return arr;
+      }
+    }
+  })();
+</script>

@@ -1,0 +1,60 @@
+@import "mixins";
+@import "props";
+
+// search list
+.search-list {
+  @include padding(50px 0);
+
+  .item {
+    @include padding-bottom(50px);
+    @include border-bottom(1px solid $whisper);
+    display: block;
+
+    &:hover {
+      h2 {
+        color: $valencia;
+
+        @include screen-under(767px) {
+          color: $night-rider;
+          animation: post-blink .5s;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 28px;
+  }
+
+  .date {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+
+  .item:not(.hidden) + .item:not(.hidden) {
+    margin-top: 50px;
+  }
+
+  .empty, .no-value {
+    @include flex(center, center);
+    @include padding(50px 0);
+    text-align: center;
+    color: $grey;
+    font-size: 13px;
+  }
+}
+
+@keyframes post-blink {
+  0% {
+    color: $night-rider;
+  }
+
+  50% {
+    color: $valencia;
+  }
+
+  100% {
+    color: $night-rider;
+  }
+}

@@ -1,70 +1,39 @@
 <header class="home-header">
-  {% include logo.html %}
+  <div class="container">
+    {% include logo.html %}
 
-  <div class="text-grey description">
-    세상에 로그를 남기고 싶은 풀스택 개발자 / tk2rush90
-  </div>
-
-  <div class="links">
-    <a
-      href="https://github.com/tk2rush90"
-      class="text-grey"
-      target="_blank"
-      rel="nofollow noopener noreferrer">
-      Github
-    </a>
-
-    <a
-      href="https://www.topcoder.com/members/tk2rush90"
-      class="text-grey"
-      target="_blank"
-      rel="nofollow noopener noreferrer">
-      Topcoder
-    </a>
-
-    <div class="loading">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="text-grey description">
+      세상에 로그를 남기고 싶은 풀스택 개발자 / tk2rush90
     </div>
 
-    <div class="winnings hidden">
+    <div class="links">
+      <a
+        href="https://github.com/tk2rush90"
+        class="text-grey"
+        target="_blank"
+        rel="nofollow noopener noreferrer">
+        Github
+      </a>
+
+      <a
+        href="https://www.topcoder.com/members/tk2rush90"
+        class="text-grey"
+        target="_blank"
+        rel="nofollow noopener noreferrer">
+        Topcoder
+      </a>
+    </div>
+
+    <a href="{{ 'search' | absolute_url }}" class="text-grey search">
       <span>
-        Wins <em class="first"></em>
+        Search
       </span>
 
-      <span>
-        Total <em class="total"></em>
-      </span>
-    </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="13.207" height="13.207" viewBox="0 0 13.207 13.207">
+        <circle cx="5" cy="5" r="4.5" fill="none" stroke="#777" stroke-width="1"/>
+        <line id="Line_3" data-name="Line 3" x2="4" y2="4" transform="translate(8.5 8.5)" fill="none"
+              stroke="#777" stroke-linecap="round" stroke-width="1"/>
+      </svg>
+    </a>
   </div>
 </header>
-
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-<script>
-  (() => {
-    const winnings = document.querySelector('.home-header .winnings');
-    const loading = document.querySelector('.home-header .loading');
-
-    axios
-      .get('https://tk2-backend.herokuapp.com/topcoder/winnings')
-      .then(res => {
-        if (winnings) {
-          winnings.classList.remove('hidden');
-
-          const first = winnings.querySelector('.first');
-          const total = winnings.querySelector('.total');
-
-          first.textContent = res.data.wins;
-          total.textContent = res.data.total;
-        }
-      })
-      .catch(e => {
-        console.error(e);
-      })
-      .finally(() => {
-        loading.classList.add('hidden');
-      });
-  })();
-</script>

@@ -3,10 +3,14 @@
 
 // home header
 .home-header {
-  @include flex(center, null, column);
-  @include padding(63px 0);
   background-color: $white;
-  text-align: center;
+
+  .container {
+    @include flex(center, null, column);
+    @include padding(63px 0);
+    position: relative;
+    text-align: center;
+  }
 
   // description
   .description {
@@ -37,62 +41,33 @@
     a + a {
       margin-top: 7px;
     }
+  }
 
-    .winnings {
-      @include flex(center, center);
-      margin-top: 7px;
-      color: $grey;
-      font-size: 13px;
+  .search {
+    @include flex(center);
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    font-size: 13px;
 
-      span + span {
-        margin-left: 10px;
+    &:hover {
+      color: $night-rider;
+
+      @include screen-under(767px) {
+        color: $grey;
+        animation: link-blink .5s;
       }
 
-      em {
-        font-style: normal;
-        color: $sunset-orange;
+      svg {
+        circle, line {
+          stroke: $night-rider;
+        }
       }
     }
 
-    .loading {
-      @include flex(center, center);
-      height: 18px;
-      margin-top: 7px;
-
-      span {
-        @include ball(4px);
-        display: block;
-        background-color: $black;
-        animation-name: loading;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-        opacity: 0;
-
-        &:nth-child(2) {
-          animation-delay: .3s;
-        }
-
-        &:nth-child(3) {
-          animation-delay: .6s;
-        }
-      }
-
-      span + span {
-        margin-left: 5px;
-      }
+    svg {
+      margin-left: 5px;
     }
-  }
-}
-
-@keyframes loading {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0;
   }
 }
 
