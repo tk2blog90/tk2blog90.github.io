@@ -43,30 +43,32 @@
     }
   }
 
-  .search {
+  .routes {
     @include flex(center);
     position: absolute;
     right: 0;
-    bottom: 20px;
-    font-size: 13px;
+    top: 20px;
 
-    &:hover {
-      color: $night-rider;
+    a {
+      @include flex(center);
+      font-size: 13px;
 
-      @include screen-under(767px) {
-        color: $grey;
-        animation: link-blink .5s;
+      span {
+        margin-left: 5px;
       }
 
-      svg {
-        circle, line {
-          stroke: $night-rider;
+      &:hover {
+        color: $night-rider;
+
+        @include screen-under(767px) {
+          color: $grey;
+          animation: link-blink .5s;
         }
       }
     }
 
-    svg {
-      margin-left: 5px;
+    a + a {
+      margin-left: 15px;
     }
   }
 }

@@ -1,0 +1,22 @@
+<div class="project-link">
+  {% if thumbnail != '' %}
+  <a class="no-style thumbnail-link" href="{{ url }}" target="_blank">
+    <img src="{{ thumbnail }}" alt="{{ name }}"/>
+  </a>
+  {% else %}
+  <a class="no-style thumbnail-link empty" href="{{ url }}" target="_blank">
+    {{name}}
+  </a>
+  {% endif %}
+
+  <a class="no-style" href="{{ url }}" target="_blank">
+    <div class="site-info">
+      <div class="site-name">
+        {{name}}
+      </div>
+      <div class="site-url">
+        {{url}}
+      </div>
+    </div>
+  </a>
+</div>

@@ -14,7 +14,7 @@
   {% assign twitter_creator = site.twitter.username | default: nil | escape %}
 {% endif %}
 
-{% assign page_description = page.excerpt | default: page.tagline | default: site.description | strip_html | normalize_whitespace | truncate: 300 | escape %}
+{% assign page_description = page.excerpt | default: page.description | default: site.description | strip_html | normalize_whitespace | truncate: 300 | escape %}
 {% assign page_keywords = page.keywords | default: site.keywords %}
 
 {%if page.image %}

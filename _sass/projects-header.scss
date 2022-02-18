@@ -1,0 +1,11 @@
+@import "mixins";
+@import "props";
+
+.projects-header {
+  background-color: $white;
+
+  .container {
+    @include flex(center, center);
+    @include padding(20px 0);
+  }
+}
