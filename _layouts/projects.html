@@ -6,6 +6,11 @@ layout: default
   {% include projects-header.html %}
 
   <div class="container">
+    {% capture url %}{{ "https://tk2rush90.github.io/wonder-writer" }}{% endcapture %}
+    {% capture name %}{{ "Wonder Writer" }}{% endcapture %}
+    {% capture thumbnail %}{{ "https://tk2rush90.github.io/wonder-writer/assets/images/thumbnail.png" }}{% endcapture %}
+    {% include project-link.html %}
+
     {% capture url %}{{ "https://tk2rush90.github.io/blockudoku-demo/" }}{% endcapture %}
     {% capture name %}{{ "블로쿠도쿠 데모" }}{% endcapture %}
     {% capture thumbnail %}{{ "" }}{% endcapture %}
