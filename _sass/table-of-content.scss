@@ -19,6 +19,7 @@
     pointer-events: all;
     position: sticky;
     overflow: auto;
+    max-height: calc(100vh - 90px - 20px);
 
     .content {
       font-size: 13px;

@@ -59,11 +59,13 @@
       display: block;
       margin-left: 0;
       width: 100%;
+      max-height: none;
 
       .contents {
         @include padding(20px 0);
         @include border-left(none);
         @include border-top(1px solid $whisper);
+        max-height: calc(100vh - 70px);
       }
     }
   }

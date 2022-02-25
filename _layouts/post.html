@@ -61,7 +61,7 @@ layout: default
 
         /**
          * Render content anchor.
-         * @param header {Element} The header element.
+         * @param header {HTMLElement} The header element.
          * @return {HTMLAnchorElement}
          */
         function renderAnchor(header) {
@@ -80,9 +80,11 @@ layout: default
             // Using default behavior of anchor tag is hard to catch the timing to run scroll adjust code.
             e.preventDefault();
 
-            location.href = location.origin + location.pathname + `#${header.id}`;
+            const hash = `#${header.id}`;
 
-            window.scrollBy(0, getScrollAdjustValue());
+            location.href = location.origin + location.pathname + hash;
+
+            window.scrollTo(0, header.offsetTop + getScrollAdjustValue());
           });
 
           return anchor;

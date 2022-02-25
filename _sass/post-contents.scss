@@ -93,6 +93,7 @@
   pre {
     line-height: 1.2em;
     margin: 40px 0;
+    overflow: hidden;
   }
 
   pre code {
@@ -101,9 +102,13 @@
     font-size: 0.9em;
   }
 
-  ul,
-  ol {
+  ul, ol {
     margin: 40px 0;
+
+    ul, ol {
+      margin: 0;
+      padding-left: 10px;
+    }
   }
 
   li {
