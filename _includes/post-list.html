@@ -1,5 +1,9 @@
 <div class="post-list">
   {% for post in paginator.posts %}
+  {% if forloop.index0 === 3 %}
+  {% include ad-sense.html %}
+  {% endif %}
+
   <a class="item" href="{{ post.url | absolute_url }}">
     <h2>
       {{ post.title }}
