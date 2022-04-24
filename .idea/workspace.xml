@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8004d880-1ca6-47ec-a114-7d1e70873965" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/posts/1/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/posts/1/meta.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/posts/2/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/posts/2/meta.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/posts/3/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/posts/3/meta.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.cc5b70d9718a4817.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime.981875f5d48baa06.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3rdpartylicenses.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/404/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/list/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/list/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/post/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/search/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/search/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/tags/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.original.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.original.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.0ca994cac18e912b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.79f75b0314b5d258.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650788994449</updated>
-      <workItem from="1650788995688" duration="2878000" />
+      <workItem from="1650788995688" duration="6557000" />
     </task>
     <task id="LOCAL-00001" summary="Blog renewal">
       <created>1650795848534</created>
@@ -53,7 +62,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650795848534</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove draft posts.">
+      <created>1650796625960</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650796625960</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix angular prerender bug.">
+      <created>1650816744181</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650816744181</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -66,6 +89,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Blog renewal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blog renewal" />
+    <MESSAGE value="Remove draft posts." />
+    <MESSAGE value="Fix angular prerender bug." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix angular prerender bug." />
   </component>
 </project>
