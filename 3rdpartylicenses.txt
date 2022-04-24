@@ -16,6 +16,9 @@ MIT
 @angular/router
 MIT
 
+@nguniversal/common
+MIT
+
 marked
 MIT
 # License information
