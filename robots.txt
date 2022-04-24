@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /search/
+Disallow: /assets/posts
+Disallow: /404
 
 Sitemap: https://tk2blog90.github.io/sitemap.xml
