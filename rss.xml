@@ -5,18 +5,18 @@
     <link>https://tk2blog90.github.io</link>
     <description>Welcome to the full-stack developer's personal space with GitHub pages</description>
     <item>
+      <title>Build the blog on GitHub pages with Angular</title>
+      <link>https://tk2blog90.github.io/blog/post/5</link>
+      <description>SEO fully supported GitHub pages with Angular</description>
+      <pubDate>Mon, 25 Apr 2022 15:04:00 GMT</pubDate>
+      <guid>https://tk2blog90.github.io/blog/post/5</guid>
+    </item>
+    <item>
       <title>Solve "Angular Universal doesn't wait for HTTP calls end"</title>
       <link>https://tk2blog90.github.io/blog/post/4</link>
       <description>It's mostly your fault</description>
       <pubDate>Mon, 25 Apr 2022 04:49:00 GMT</pubDate>
       <guid>https://tk2blog90.github.io/blog/post/4</guid>
-    </item>
-    <item>
-      <title>Build the blog on GitHub pages with Angular</title>
-      <link>https://tk2blog90.github.io/blog/post/5</link>
-      <description>SEO fully supported GitHub pages with Angular</description>
-      <pubDate>Mon, 25 Apr 2022 04:49:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/5</guid>
     </item>
     <item>
       <title>Heroku를 이용한 Node.js 무제한 무료 호스팅 사용 방법</title>
