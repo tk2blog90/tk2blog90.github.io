@@ -30,17 +30,14 @@ function runCommand(command) {
  * @returns {Promise<void>}
  */
 async function run() {
-  // Move to this directory.
-  await runCommand(`cd ${__dirname}`);
-  
   // Add missing files.
-  await runCommand(`git add .`);
+  await runCommand(`cd ${__dirname} && git add .`);
   
   // Commit changes.
-  await runCommand(`git commit -m ${new Date().toISOString()}`);
+  await runCommand(`cd ${__dirname} && git commit -m ${new Date().toISOString()}`);
   
   // Push.
-  await runCommand(`git push origin master`);
+  await runCommand(`cd ${__dirname} && git push origin master`);
 }
 
 run();

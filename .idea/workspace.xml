@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8004d880-1ca6-47ec-a114-7d1e70873965" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/404/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/list/0" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/list/0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/lookups/posts" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/lookups/posts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/lookups/tags" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/lookups/tags" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/list/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/list/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/post/3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/search/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/search/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/tags/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.original.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.original.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cc5b70d9718a4817.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/push.js" beforeDir="false" afterPath="$PROJECT_DIR$/push.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rss.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rss.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts.4b161fea61748ac4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.d127e55db5ca2b89.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +52,7 @@
       <updated>1650788994449</updated>
       <workItem from="1650788995688" duration="6576000" />
       <workItem from="1650845939793" duration="2164000" />
-      <workItem from="1650862440802" duration="74000" />
+      <workItem from="1650862440802" duration="1524000" />
     </task>
     <task id="LOCAL-00001" summary="Blog renewal">
       <created>1650795848534</created>
