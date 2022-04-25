@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="utf-8">
-  <title>타입스크립트(자바스크립트)로 달력 만들기</title>
+  <title>LOGLOG - Welcome</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noarchive">
@@ -28,21 +28,21 @@
   <!-- SEO tags -->
   <!-- default -->
   <meta name="author" content="tk2rush90">
-  <meta name="description" content="이번 포스팅은 별도의 라이브러리 없이 자바스크립트 기본 기능만으로 달력을 만들 수 있는 함수를 만드는 것. 그러나 타입스크립트로 작성된 😁 글 전체에 설명은 타입스크립트로 진행하지만 맨 하단에 자바스크립트용 코드도 적어놨다.개요자바스크립트에서 달력을 구현할 수 있는 다양한 라이브러리들이 있지만 나는 직접 뭔가 만들어서 사용하는 것을 더 선호하는 편이다.코딩 관련 일을 할 때면 매번 다른 디자인의 다양한 요구사항들을 처리해야하는 경우가 많은데 라이브러리들은 제한된 기능을 제공하거나, UI랑 밀접하게 연결되어 있기 때문에 제공하는 것">
-  <meta name="keywords" itemprop="keywords" content="Javascript, Typescript, 달력, 자바스크립트, 타입스크립트">
+  <meta name="description" content="Welcome to the full-stack developer's personal space with GitHub pages">
+  <meta name="keywords" itemprop="keywords" content="full-stack developer, developer blog, blog">
   <!-- twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="타입스크립트(자바스크립트)로 달력 만들기">
-  <meta name="twitter:description" content="이번 포스팅은 별도의 라이브러리 없이 자바스크립트 기본 기능만으로 달력을 만들 수 있는 함수를 만드는 것. 그러나 타입스크립트로 작성된 😁 글 전체에 설명은 타입스크립트로 진행하지만 맨 하단에 자바스크립트용 코드도 적어놨다.개요자바스크립트에서 달력을 구현할 수 있는 다양한 라이브러리들이 있지만 나는 직접 뭔가 만들어서 사용하는 것을 더 선호하는 편이다.코딩 관련 일을 할 때면 매번 다른 디자인의 다양한 요구사항들을 처리해야하는 경우가 많은데 라이브러리들은 제한된 기능을 제공하거나, UI랑 밀접하게 연결되어 있기 때문에 제공하는 것">
-  <meta name="twitter:image:src" content="/assets/images/posts/1/thumbnail.png?v=rjgtcdrbbk">
-  <meta name="twitter:image" content="/assets/images/posts/1/thumbnail.png?v=rjgtcdrbbk">
-  <meta name="twitter:url" content="https://tk2blog90.github.io/blog/post/1">
+  <meta name="twitter:title" content="LOGLOG - Welcome">
+  <meta name="twitter:description" content="Welcome to the full-stack developer's personal space with GitHub pages">
+  <meta name="twitter:image:src" content="/assets/images/app/thumbnail.png">
+  <meta name="twitter:image" content="/assets/images/app/thumbnail.png">
+  <meta name="twitter:url" content="https://tk2rush90.github.io">
   <!-- opengraph -->
-  <meta property="og:title" content="타입스크립트(자바스크립트)로 달력 만들기">
+  <meta property="og:title" content="LOGLOG - Welcome">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://tk2blog90.github.io/blog/post/1">
-  <meta property="og:image" content="/assets/images/posts/1/thumbnail.png?v=rjgtcdrbbk">
-  <meta property="og:description" content="이번 포스팅은 별도의 라이브러리 없이 자바스크립트 기본 기능만으로 달력을 만들 수 있는 함수를 만드는 것. 그러나 타입스크립트로 작성된 😁 글 전체에 설명은 타입스크립트로 진행하지만 맨 하단에 자바스크립트용 코드도 적어놨다.개요자바스크립트에서 달력을 구현할 수 있는 다양한 라이브러리들이 있지만 나는 직접 뭔가 만들어서 사용하는 것을 더 선호하는 편이다.코딩 관련 일을 할 때면 매번 다른 디자인의 다양한 요구사항들을 처리해야하는 경우가 많은데 라이브러리들은 제한된 기능을 제공하거나, UI랑 밀접하게 연결되어 있기 때문에 제공하는 것">
+  <meta property="og:url" content="https://tk2rush90.github.io">
+  <meta property="og:image" content="/assets/images/app/thumbnail.png">
+  <meta property="og:description" content="Welcome to the full-stack developer's personal space with GitHub pages">
   <meta property="og:site_name" content="LOGLOG">
   <meta property="og:locale" content="">
 
@@ -64,329 +64,19 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/assets/images/app/ms-icon-144x144.png?v=1234">
   <meta name="theme-color" content="#ffffff">
-<style>@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";*{padding:0;margin:0}*{transition:background-color .15s,fill .15s;-webkit-tap-highlight-color:transparent}</style><style>@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";*{padding:0;margin:0}a{text-decoration:none;color:inherit}.tk-ripple-container{position:relative}.tk-ripple-container.tk-ripple-bounded{overflow:hidden}.theme-light .grey-text{color:#0000004d}.theme-light .grey-icon svg path{fill:#000}.theme-light app-copyrights{color:#333}.theme-light markdown h1:before,.theme-light markdown h2:before{color:#3333334d}.theme-light .image-placeholder{background-color:#3333330d}.theme-light app-header{background-color:#fff}markdown{display:block}markdown>*:first-child{margin-top:0}markdown *{-webkit-user-select:auto;user-select:auto}markdown img{max-width:100%}markdown h1,markdown h2{margin:2em 0;font-weight:600;word-break:break-word;line-height:1.8em}markdown h1:before,markdown h2:before{content:"#";height:1em;display:inline-block;vertical-align:baseline;margin-right:5px}markdown h1{font-size:26px}markdown h2{font-size:24px}markdown p{margin:2em 0;line-height:1.8em}markdown code{font-family:JetBrains Mono,monospace;font-size:13px;font-weight:400;color:#41c2de}markdown img{border:1px solid rgba(51,51,51,.1);max-width:100%;height:auto;box-sizing:border-box;margin:2em auto}markdown a{color:#41c2de;text-decoration:underline}markdown a:hover{color:#6cd0e6}.theme-light code[class*=language-]{color:#000;background:none;text-shadow:0 1px white;font-family:JetBrains Mono,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:12px;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.8em;tab-size:4;-webkit-hyphens:none;hyphens:none}.theme-light code[class*=language-]::selection,.theme-light code[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{.theme-light code[class*=language-]{text-shadow:none}}*{transition:background-color .15s,fill .15s;-webkit-tap-highlight-color:transparent}img{display:block}</style><link rel="stylesheet" href="styles.02f4ad07d2109d2d.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.02f4ad07d2109d2d.css"></noscript><style ng-transition="serverApp">[_nghost-sc75]{width:100%;height:100%;position:absolute;display:block;font-family:Montserrat,Gothic A1,sans-serif;font-size:14px}.theme-light[_nghost-sc75]{background-color:#fff;color:#333}.theme-dark[_nghost-sc75]{background-color:#333;color:#fff}[_nghost-sc75]     app-home+app-home, [_nghost-sc75]     app-home+app-blog, [_nghost-sc75]     app-blog+app-home, [_nghost-sc75]     app-blog+app-blog{position:absolute;width:100%;top:0}[_nghost-sc75]     app-home+app-home, [_nghost-sc75]     app-home+app-not-found, [_nghost-sc75]     app-not-found+app-home, [_nghost-sc75]     app-not-found+app-not-found{position:absolute;width:100%;top:0}[_nghost-sc75]     app-blog+app-blog, [_nghost-sc75]     app-blog+app-not-found, [_nghost-sc75]     app-not-found+app-blog, [_nghost-sc75]     app-not-found+app-not-found{position:absolute;width:100%;top:0}</style><style ng-transition="serverApp"></style><style ng-transition="serverApp">[_nghost-sc30]{width:100%;height:100%;display:block;overflow:auto}main[_ngcontent-sc30]{max-width:1000px;width:calc(100% - 20px);margin:0 auto}app-header[_ngcontent-sc30]{z-index:100}app-header.scrollable[_ngcontent-sc30]{position:sticky;top:0;height:70px;opacity:0;transition:opacity .1s;box-shadow:0 3px 6px #0003;pointer-events:none}app-header.scrollable.scrolled[_ngcontent-sc30]{opacity:1;pointer-events:auto}.container[_ngcontent-sc30]{position:relative}[_nghost-sc30]     app-list+app-list, [_nghost-sc30]     app-list+app-post, [_nghost-sc30]     app-post+app-list, [_nghost-sc30]     app-post+app-post{position:absolute;width:100%;top:0}[_nghost-sc30]     app-list+app-list, [_nghost-sc30]     app-list+app-search, [_nghost-sc30]     app-search+app-list, [_nghost-sc30]     app-search+app-search{position:absolute;width:100%;top:0}[_nghost-sc30]     app-list+app-list, [_nghost-sc30]     app-list+app-tags, [_nghost-sc30]     app-tags+app-list, [_nghost-sc30]     app-tags+app-tags{position:absolute;width:100%;top:0}[_nghost-sc30]     app-post+app-post, [_nghost-sc30]     app-post+app-search, [_nghost-sc30]     app-search+app-post, [_nghost-sc30]     app-search+app-search{position:absolute;width:100%;top:0}[_nghost-sc30]     app-post+app-post, [_nghost-sc30]     app-post+app-tags, [_nghost-sc30]     app-tags+app-post, [_nghost-sc30]     app-tags+app-tags{position:absolute;width:100%;top:0}[_nghost-sc30]     app-search+app-search, [_nghost-sc30]     app-search+app-tags, [_nghost-sc30]     app-tags+app-search, [_nghost-sc30]     app-tags+app-tags{position:absolute;width:100%;top:0}</style><style ng-transition="serverApp">[_nghost-sc29]{display:block;-webkit-user-select:none;user-select:none;height:150px}.container[_ngcontent-sc29]{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:1000px;width:calc(100% - 20px);height:100%;margin:0 auto}.container[_ngcontent-sc29] > *[_ngcontent-sc29]{flex:0 0 auto}.title[_ngcontent-sc29]{font-weight:900;font-size:30px;color:#41c2de}.buttons[_ngcontent-sc29]{display:flex;align-items:center;flex-wrap:wrap}.buttons[_ngcontent-sc29] > *[_ngcontent-sc29]{flex:0 0 auto}.search[_ngcontent-sc29]{margin-left:10px}</style><style ng-transition="serverApp">[_nghost-sc21]{cursor:pointer;display:block}</style><style ng-transition="serverApp">[_nghost-sc19]{display:block}[_nghost-sc19]     svg{display:block}</style><style ng-transition="serverApp">[_nghost-sc71]{position:relative;display:block}.container[_ngcontent-sc71]{max-width:600px;width:100%;margin:0 auto}.meta[_ngcontent-sc71]{display:flex;align-items:center;flex-direction:column;flex-wrap:wrap;text-align:center}.meta[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}.title[_ngcontent-sc71]{font-size:20px;font-weight:600;margin-top:20px}.description[_ngcontent-sc71]{margin-top:10px}.banner[_ngcontent-sc71]{width:100%;height:350px;overflow:hidden;margin-top:50px}.banner[_ngcontent-sc71]   img[_ngcontent-sc71]{width:100%;height:100%;object-fit:cover}.credit[_ngcontent-sc71]{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;height:40px;font-size:12px}.credit[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}.credit[_ngcontent-sc71]   a[_ngcontent-sc71]{text-decoration:underline}.contents[_ngcontent-sc71]{position:relative;margin-top:50px}.contents[_ngcontent-sc71]   .container[_ngcontent-sc71]{margin:0}@media screen and (min-width: 841px){.contents[_ngcontent-sc71]{display:flex;align-items:flex-start;flex-wrap:wrap}.contents[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}}@media screen and (max-width: 840px){.contents[_ngcontent-sc71]{display:flex;align-items:center;flex-direction:column-reverse;flex-wrap:wrap}.contents[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}}.actions[_ngcontent-sc71]{box-sizing:border-box;padding:20px 0;position:sticky;top:70px}@media screen and (min-width: 841px){.actions[_ngcontent-sc71]{display:flex;align-items:center;flex-direction:column;flex-wrap:wrap;width:200px}.actions[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}}@media screen and (max-width: 840px){.actions[_ngcontent-sc71]{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;width:100%}.actions[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}}.action[_ngcontent-sc71]{display:flex;align-items:center;flex-direction:column;flex-wrap:wrap;text-align:center;font-size:11px;cursor:pointer;-webkit-user-select:none;user-select:none;text-transform:uppercase}.action[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}.action[_ngcontent-sc71]   span[_ngcontent-sc71]{margin-top:5px}@media screen and (max-width: 840px){.action[_ngcontent-sc71]   span[_ngcontent-sc71]{display:none}}@media screen and (min-width: 841px){.action[_ngcontent-sc71] + .action[_ngcontent-sc71]{margin-top:20px}}@media screen and (max-width: 840px){.action[_ngcontent-sc71] + .action[_ngcontent-sc71]{margin-left:20px}}article[_ngcontent-sc71]{line-height:1.8em;-webkit-user-select:auto;user-select:auto}app-tag-list[_ngcontent-sc71], app-copyrights[_ngcontent-sc71]{margin-top:50px}app-loading-spinner[_ngcontent-sc71]{position:absolute;width:100%;top:0}app-table-of-contents[_ngcontent-sc71]:not(.empty) + markdown[_ngcontent-sc71]{margin-top:2em}</style><style ng-transition="serverApp">[_nghost-sc66]{display:block}.label[_ngcontent-sc66] + .tags[_ngcontent-sc66]{margin-top:10px}.tags[_ngcontent-sc66]{display:flex;flex-wrap:wrap}.tags[_ngcontent-sc66] > *[_ngcontent-sc66]{flex:0 0 auto}a[_ngcontent-sc66]{padding:0 10px;box-sizing:border-box;border:1px solid transparent;display:flex;align-items:center;flex-wrap:wrap;margin-right:5px;margin-bottom:5px;background-color:#41c2de;color:#fff;font-size:12px;height:25px;border-radius:25px}a[_ngcontent-sc66] > *[_ngcontent-sc66]{flex:0 0 auto}a[_ngcontent-sc66]:hover{background-color:#6cd0e6}.empty[_ngcontent-sc66]{width:100%;font-size:12px;text-align:center}</style><style ng-transition="serverApp">[_nghost-sc22]{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;height:55px;text-align:center;font-size:12px}[_nghost-sc22] > *[_ngcontent-sc22]{flex:0 0 auto}</style><style ng-transition="serverApp">[_nghost-sc68]{box-sizing:border-box;padding:20px;display:flex;align-items:flex-start;flex-direction:column;flex-wrap:wrap}[_nghost-sc68] > *[_ngcontent-sc68]{flex:0 0 auto}.light[_nghost-sc68]{background-color:#3333330d}.light[_nghost-sc68]   a[_ngcontent-sc68]   span[_ngcontent-sc68]{color:#3333334d}.dark[_nghost-sc68]{background-color:#ffffff0d}.dark[_nghost-sc68]   a[_ngcontent-sc68]   span[_ngcontent-sc68]{color:#ffffff4d}.empty[_nghost-sc68]{display:none}a[_ngcontent-sc68]{display:block;font-size:14px}a[_ngcontent-sc68]:hover{text-decoration:underline}a.indent-1[_ngcontent-sc68]{box-sizing:border-box;padding-left:0}a.indent-2[_ngcontent-sc68]{box-sizing:border-box;padding-left:10px}a.indent-3[_ngcontent-sc68]{box-sizing:border-box;padding-left:20px}a.indent-4[_ngcontent-sc68]{box-sizing:border-box;padding-left:30px}a.indent-5[_ngcontent-sc68]{box-sizing:border-box;padding-left:40px}a.indent-6[_ngcontent-sc68]{box-sizing:border-box;padding-left:50px}a[_ngcontent-sc68] + a[_ngcontent-sc68]{margin-top:10px}</style><meta property="article:published_time" content="2022-02-12T15:00:00.000Z"><meta property="article:tag" content="Javascript"><meta property="article:tag" content="Typescript"><meta property="article:tag" content="달력"><meta property="article:tag" content="자바스크립트"><meta property="article:tag" content="타입스크립트"></head>
+<style>@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";*{padding:0;margin:0}*{transition:background-color .15s,fill .15s;-webkit-tap-highlight-color:transparent}</style><style>@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";*{padding:0;margin:0}a{text-decoration:none;color:inherit}.tk-flat-button{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;position:relative;font-weight:900;text-transform:uppercase;transition:background-color .1s}.tk-flat-button>*{flex:0 0 auto}.theme-light .tk-flat-button[tk-color=default]{color:#333;background-color:#3333330d}.theme-light .tk-flat-button[tk-color=default]:not(:disabled){cursor:pointer;-webkit-user-select:none;user-select:none}.theme-light .tk-flat-button[tk-color=default]:not(:disabled):hover{background-color:#3333331a}.theme-light .tk-flat-button[tk-color=default]:not(:disabled):active{background-color:#3333331a}.theme-light .tk-flat-button[tk-color=default]:disabled{opacity:.3}.tk-ripple-container{position:relative}.tk-ripple-container.tk-ripple-bounded{overflow:hidden}.theme-light .black-icon svg path{fill:#333}.theme-light app-copyrights{color:#333}*{transition:background-color .15s,fill .15s;-webkit-tap-highlight-color:transparent}</style><link rel="stylesheet" href="styles.02f4ad07d2109d2d.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.02f4ad07d2109d2d.css"></noscript><style ng-transition="serverApp">[_nghost-sc75]{width:100%;height:100%;position:absolute;display:block;font-family:Montserrat,Gothic A1,sans-serif;font-size:14px}.theme-light[_nghost-sc75]{background-color:#fff;color:#333}.theme-dark[_nghost-sc75]{background-color:#333;color:#fff}[_nghost-sc75]     app-home+app-home, [_nghost-sc75]     app-home+app-blog, [_nghost-sc75]     app-blog+app-home, [_nghost-sc75]     app-blog+app-blog{position:absolute;width:100%;top:0}[_nghost-sc75]     app-home+app-home, [_nghost-sc75]     app-home+app-not-found, [_nghost-sc75]     app-not-found+app-home, [_nghost-sc75]     app-not-found+app-not-found{position:absolute;width:100%;top:0}[_nghost-sc75]     app-blog+app-blog, [_nghost-sc75]     app-blog+app-not-found, [_nghost-sc75]     app-not-found+app-blog, [_nghost-sc75]     app-not-found+app-not-found{position:absolute;width:100%;top:0}</style><style ng-transition="serverApp"></style><style ng-transition="serverApp">[_nghost-sc30]{width:100%;height:100%;display:block;overflow:auto}main[_ngcontent-sc30]{max-width:1000px;width:calc(100% - 20px);margin:0 auto}app-header[_ngcontent-sc30]{z-index:100}app-header.scrollable[_ngcontent-sc30]{position:sticky;top:0;height:70px;opacity:0;transition:opacity .1s;box-shadow:0 3px 6px #0003;pointer-events:none}app-header.scrollable.scrolled[_ngcontent-sc30]{opacity:1;pointer-events:auto}.container[_ngcontent-sc30]{position:relative}[_nghost-sc30]     app-list+app-list, [_nghost-sc30]     app-list+app-post, [_nghost-sc30]     app-post+app-list, [_nghost-sc30]     app-post+app-post{position:absolute;width:100%;top:0}[_nghost-sc30]     app-list+app-list, [_nghost-sc30]     app-list+app-search, [_nghost-sc30]     app-search+app-list, [_nghost-sc30]     app-search+app-search{position:absolute;width:100%;top:0}[_nghost-sc30]     app-list+app-list, [_nghost-sc30]     app-list+app-tags, [_nghost-sc30]     app-tags+app-list, [_nghost-sc30]     app-tags+app-tags{position:absolute;width:100%;top:0}[_nghost-sc30]     app-post+app-post, [_nghost-sc30]     app-post+app-search, [_nghost-sc30]     app-search+app-post, [_nghost-sc30]     app-search+app-search{position:absolute;width:100%;top:0}[_nghost-sc30]     app-post+app-post, [_nghost-sc30]     app-post+app-tags, [_nghost-sc30]     app-tags+app-post, [_nghost-sc30]     app-tags+app-tags{position:absolute;width:100%;top:0}[_nghost-sc30]     app-search+app-search, [_nghost-sc30]     app-search+app-tags, [_nghost-sc30]     app-tags+app-search, [_nghost-sc30]     app-tags+app-tags{position:absolute;width:100%;top:0}</style><style ng-transition="serverApp">[_nghost-sc29]{display:block;-webkit-user-select:none;user-select:none;height:150px}.container[_ngcontent-sc29]{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:1000px;width:calc(100% - 20px);height:100%;margin:0 auto}.container[_ngcontent-sc29] > *[_ngcontent-sc29]{flex:0 0 auto}.title[_ngcontent-sc29]{font-weight:900;font-size:30px;color:#41c2de}.buttons[_ngcontent-sc29]{display:flex;align-items:center;flex-wrap:wrap}.buttons[_ngcontent-sc29] > *[_ngcontent-sc29]{flex:0 0 auto}.search[_ngcontent-sc29]{margin-left:10px}</style><style ng-transition="serverApp">[_nghost-sc21]{cursor:pointer;display:block}</style><style ng-transition="serverApp">[_nghost-sc19]{display:block}[_nghost-sc19]     svg{display:block}</style><style ng-transition="serverApp">[_nghost-sc71]{position:relative;display:block}.container[_ngcontent-sc71]{max-width:600px;width:100%;margin:0 auto}.meta[_ngcontent-sc71]{display:flex;align-items:center;flex-direction:column;flex-wrap:wrap;text-align:center}.meta[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}.title[_ngcontent-sc71]{font-size:20px;font-weight:600;margin-top:20px}.description[_ngcontent-sc71]{margin-top:10px}.banner[_ngcontent-sc71]{width:100%;height:350px;overflow:hidden;margin-top:50px}.banner[_ngcontent-sc71]   img[_ngcontent-sc71]{width:100%;height:100%;object-fit:cover}.credit[_ngcontent-sc71]{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;height:40px;font-size:12px}.credit[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}.credit[_ngcontent-sc71]   a[_ngcontent-sc71]{text-decoration:underline}.contents[_ngcontent-sc71]{position:relative;margin-top:50px}.contents[_ngcontent-sc71]   .container[_ngcontent-sc71]{margin:0}@media screen and (min-width: 841px){.contents[_ngcontent-sc71]{display:flex;align-items:flex-start;flex-wrap:wrap}.contents[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}}@media screen and (max-width: 840px){.contents[_ngcontent-sc71]{display:flex;align-items:center;flex-direction:column-reverse;flex-wrap:wrap}.contents[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}}.actions[_ngcontent-sc71]{box-sizing:border-box;padding:20px 0;position:sticky;top:70px}@media screen and (min-width: 841px){.actions[_ngcontent-sc71]{display:flex;align-items:center;flex-direction:column;flex-wrap:wrap;width:200px}.actions[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}}@media screen and (max-width: 840px){.actions[_ngcontent-sc71]{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;width:100%}.actions[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}}.action[_ngcontent-sc71]{display:flex;align-items:center;flex-direction:column;flex-wrap:wrap;text-align:center;font-size:11px;cursor:pointer;-webkit-user-select:none;user-select:none;text-transform:uppercase}.action[_ngcontent-sc71] > *[_ngcontent-sc71]{flex:0 0 auto}.action[_ngcontent-sc71]   span[_ngcontent-sc71]{margin-top:5px}@media screen and (max-width: 840px){.action[_ngcontent-sc71]   span[_ngcontent-sc71]{display:none}}@media screen and (min-width: 841px){.action[_ngcontent-sc71] + .action[_ngcontent-sc71]{margin-top:20px}}@media screen and (max-width: 840px){.action[_ngcontent-sc71] + .action[_ngcontent-sc71]{margin-left:20px}}article[_ngcontent-sc71]{line-height:1.8em;-webkit-user-select:auto;user-select:auto}app-tag-list[_ngcontent-sc71], app-copyrights[_ngcontent-sc71]{margin-top:50px}app-loading-spinner[_ngcontent-sc71]{position:absolute;width:100%;top:0}app-table-of-contents[_ngcontent-sc71]:not(.empty) + markdown[_ngcontent-sc71]{margin-top:2em}</style><style ng-transition="serverApp">[_nghost-sc66]{display:block}.label[_ngcontent-sc66] + .tags[_ngcontent-sc66]{margin-top:10px}.tags[_ngcontent-sc66]{display:flex;flex-wrap:wrap}.tags[_ngcontent-sc66] > *[_ngcontent-sc66]{flex:0 0 auto}a[_ngcontent-sc66]{padding:0 10px;box-sizing:border-box;border:1px solid transparent;display:flex;align-items:center;flex-wrap:wrap;margin-right:5px;margin-bottom:5px;background-color:#41c2de;color:#fff;font-size:12px;height:25px;border-radius:25px}a[_ngcontent-sc66] > *[_ngcontent-sc66]{flex:0 0 auto}a[_ngcontent-sc66]:hover{background-color:#6cd0e6}.empty[_ngcontent-sc66]{width:100%;font-size:12px;text-align:center}</style><style ng-transition="serverApp">[_nghost-sc22]{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;height:55px;text-align:center;font-size:12px}[_nghost-sc22] > *[_ngcontent-sc22]{flex:0 0 auto}</style><style ng-transition="serverApp">[_nghost-sc73]{width:100%;height:100%;display:block;overflow:auto;-webkit-user-select:none;user-select:none}main[_ngcontent-sc73]{box-sizing:border-box;padding-top:150px;min-height:calc(100% - 105px)}h1[_ngcontent-sc73]{text-align:center;margin:0 auto;color:#41c2de;font-weight:900}@media screen and (min-width: 1001px){h1[_ngcontent-sc73]{font-size:200px}}@media screen and (min-width: 769px) and (max-width: 1000px){h1[_ngcontent-sc73]{font-size:150px}}@media screen and (min-width: 541px) and (max-width: 768px){h1[_ngcontent-sc73]{font-size:100px}}@media screen and (min-width: 0px) and (max-width: 540px){h1[_ngcontent-sc73]{font-size:60px}}.descriptions[_ngcontent-sc73]{margin-top:50px}.descriptions[_ngcontent-sc73]   p[_ngcontent-sc73]{margin:0 auto;font-size:14px;text-align:center}.descriptions[_ngcontent-sc73]   p[_ngcontent-sc73] + p[_ngcontent-sc73]{margin-top:10px}.links[_ngcontent-sc73]{margin:50px auto 0;max-width:370px;width:calc(100% - 20px)}.links[_ngcontent-sc73]   a[_ngcontent-sc73]{width:100%;height:60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;box-sizing:border-box;padding:0 20px}.links[_ngcontent-sc73]   a[_ngcontent-sc73] > *[_ngcontent-sc73]{flex:0 0 auto}.links[_ngcontent-sc73]   a[_ngcontent-sc73]   div[_ngcontent-sc73]{display:flex;align-items:center;flex-wrap:wrap}.links[_ngcontent-sc73]   a[_ngcontent-sc73]   div[_ngcontent-sc73] > *[_ngcontent-sc73]{flex:0 0 auto}.links[_ngcontent-sc73]   a[_ngcontent-sc73]   p[_ngcontent-sc73] + app-icon[_ngcontent-sc73]{margin-left:10px}.links[_ngcontent-sc73]   a[_ngcontent-sc73] + a[_ngcontent-sc73]{margin-top:10px}.bottom[_ngcontent-sc73]{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:50px}.bottom[_ngcontent-sc73] > *[_ngcontent-sc73]{flex:0 0 auto}app-copyrights[_ngcontent-sc73]{margin-top:50px}</style><style ng-transition="serverApp">h1[_ngcontent-sc73]{color:#de4141}</style></head>
 <body>
-  <app-root _nghost-sc75="" ng-version="13.1.3" class="theme-light"><router-outlet _ngcontent-sc75=""></router-outlet><app-blog _nghost-sc30="" class="ng-star-inserted"><app-header _ngcontent-sc30="" _nghost-sc29=""><div _ngcontent-sc29="" class="container"><a _ngcontent-sc29="" class="title" href="/blog"> LOGLOG </a><div _ngcontent-sc29="" class="buttons"><app-theme-button _ngcontent-sc29="" _nghost-sc21=""><app-icon _ngcontent-sc21="" appripple="" _nghost-sc19="" tk-name="nightlight:black-30" class="tk-ripple-container tk-ripple-black">
+  <app-root _nghost-sc75="" ng-version="13.1.3" class="theme-light"><router-outlet _ngcontent-sc75=""></router-outlet><app-not-found _nghost-sc73="" class="ng-star-inserted"><main _ngcontent-sc73=""><h1 _ngcontent-sc73=""> LOGLOG </h1><div _ngcontent-sc73="" class="descriptions"><p _ngcontent-sc73=""> The page is not found. </p><p _ngcontent-sc73=""> Move to homepage by clicking following button. </p></div><div _ngcontent-sc73="" class="links"><a _ngcontent-sc73="" appflatbutton="" href="/" class="tk-ripple-bounded tk-ripple-container tk-ripple-black tk-flat-button" tk-color="default"><p _ngcontent-sc73="">main</p><app-icon _ngcontent-sc73="" name="chevron-right:night-rider" class="black-icon" _nghost-sc19="" tk-name="chevron-right:night-rider">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12.013 11.9993C12.013 8.4293 14.213 5.3793 17.323 4.1293C18.213 3.7693 18.073 2.4393 17.133 2.2293C16.033 1.9893 14.863 1.9293 13.653 2.0893C9.14295 2.6893 5.53296 6.3993 5.06296 10.9193C4.44296 16.9293 9.13296 21.9993 15.013 21.9993C15.743 21.9993 16.443 21.9193 17.133 21.7693C18.083 21.5593 18.233 20.2393 17.333 19.8693C14.113 18.5793 12.003 15.4593 12.013 11.9993V11.9993Z" fill="black" fill-opacity="0.3"></path>
+      <path d="M10.0001 6L8.59009 7.41L13.1701 12L8.59009 16.59L10.0001 18L16.0001 12L10.0001 6Z" fill="#333333"></path>
     </svg>
-  </app-icon><!----></app-theme-button><a _ngcontent-sc29="" appripple="" class="search tk-ripple-container tk-ripple-black" href="/blog/search"><app-icon _ngcontent-sc29="" name="search:black-30" class="grey-icon" _nghost-sc19="" tk-name="search:black-30">
+  </app-icon></a><!----><a _ngcontent-sc73="" appflatbutton="" href="/blog" class="tk-ripple-bounded tk-ripple-container tk-ripple-black tk-flat-button" tk-color="default"><p _ngcontent-sc73="">blog home</p><app-icon _ngcontent-sc73="" name="chevron-right:night-rider" class="black-icon" _nghost-sc19="" tk-name="chevron-right:night-rider">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="black" fill-opacity="0.3"></path>
+      <path d="M10.0001 6L8.59009 7.41L13.1701 12L8.59009 16.59L10.0001 18L16.0001 12L10.0001 6Z" fill="#333333"></path>
     </svg>
-  </app-icon></a><!----></div></div></app-header><app-header _ngcontent-sc30="" class="scrollable" _nghost-sc29=""><div _ngcontent-sc29="" class="container"><a _ngcontent-sc29="" class="title" href="/blog"> LOGLOG </a><div _ngcontent-sc29="" class="buttons"><app-theme-button _ngcontent-sc29="" _nghost-sc21=""><app-icon _ngcontent-sc21="" appripple="" _nghost-sc19="" tk-name="nightlight:black-30" class="tk-ripple-container tk-ripple-black">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12.013 11.9993C12.013 8.4293 14.213 5.3793 17.323 4.1293C18.213 3.7693 18.073 2.4393 17.133 2.2293C16.033 1.9893 14.863 1.9293 13.653 2.0893C9.14295 2.6893 5.53296 6.3993 5.06296 10.9193C4.44296 16.9293 9.13296 21.9993 15.013 21.9993C15.743 21.9993 16.443 21.9193 17.133 21.7693C18.083 21.5593 18.233 20.2393 17.333 19.8693C14.113 18.5793 12.003 15.4593 12.013 11.9993V11.9993Z" fill="black" fill-opacity="0.3"></path>
-    </svg>
-  </app-icon><!----></app-theme-button><a _ngcontent-sc29="" appripple="" class="search tk-ripple-container tk-ripple-black" href="/blog/search"><app-icon _ngcontent-sc29="" name="search:black-30" class="grey-icon" _nghost-sc19="" tk-name="search:black-30">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="black" fill-opacity="0.3"></path>
-    </svg>
-  </app-icon></a><!----></div></div></app-header><main _ngcontent-sc30="" class=""><div _ngcontent-sc30="" class="container"><router-outlet _ngcontent-sc30=""></router-outlet><app-post _nghost-sc71="" class="ng-tns-c71-0 ng-trigger ng-trigger-fade-in ng-star-inserted" style="opacity:1;"><div _ngcontent-sc71="" class="meta container ng-tns-c71-0"><div _ngcontent-sc71="" class="grey-text ng-tns-c71-0"> 13 February, 2022 </div><h1 _ngcontent-sc71="" class="title ng-tns-c71-0"> 타입스크립트(자바스크립트)로 달력 만들기 </h1><div _ngcontent-sc71="" class="grey-text description ng-tns-c71-0"> 달력 생성을 위한 타입스크립트(자바스크립트) 함수 </div></div><div _ngcontent-sc71="" class="banner image-placeholder ng-tns-c71-0"><img _ngcontent-sc71="" class="ng-tns-c71-0 ng-star-inserted" src="/assets/images/posts/1/banner.png" alt="타입스크립트(자바스크립트)로 달력 만들기" style=""><!----></div><div _ngcontent-sc71="" class="credit ng-tns-c71-0 ng-star-inserted" style=""><div _ngcontent-sc71="" class="grey-text ng-tns-c71-0"> Photo by <a _ngcontent-sc71="" appouterlink="" class="ng-tns-c71-0" href="https://unsplash.com/@kyrie3?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="nofollow noreferrer noopener">Kyrie kim</a> on <a _ngcontent-sc71="" href="https://unsplash.com" appouterlink="" class="ng-tns-c71-0" target="_blank" rel="nofollow noreferrer noopener">Unsplash</a>. </div></div><!----><div _ngcontent-sc71="" class="contents ng-tns-c71-0"><div _ngcontent-sc71="" class="actions ng-tns-c71-0"><a _ngcontent-sc71="" appouterlink="" class="action ng-tns-c71-0" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Ftk2blog90.github.io%2Fblog%2Fpost%2F1" target="_blank" rel="nofollow noreferrer noopener"><app-icon _ngcontent-sc71="" name="twitter:black-30" class="grey-icon ng-tns-c71-0" _nghost-sc19="" tk-name="twitter:black-30">
-    <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21.7633 5.03007C21.778 5.24281 21.778 5.45556 21.778 5.67026C21.778 12.2124 16.7976 19.7575 7.69078 19.7575V19.7536C5.00058 19.7575 2.36627 18.9869 0.101562 17.534C0.492739 17.581 0.885876 17.6046 1.27999 17.6056C3.50941 17.6075 5.67509 16.8595 7.42901 15.482C5.31039 15.4418 3.45254 14.0605 2.80352 12.0438C3.54568 12.1869 4.31039 12.1575 5.03882 11.9585C2.72901 11.4918 1.06725 9.46242 1.06725 7.10556C1.06725 7.08399 1.06725 7.0634 1.06725 7.04281C1.75548 7.42615 2.52607 7.63889 3.31431 7.66242C1.13882 6.2085 0.468229 3.31438 1.78195 1.05164C4.29568 4.14477 8.0045 6.02517 11.9859 6.22418C11.5869 4.50458 12.132 2.70262 13.4182 1.49379C15.4123 -0.380717 18.5486 -0.284639 20.4231 1.7085C21.532 1.48987 22.5947 1.08301 23.5672 0.506538C23.1976 1.65262 22.4241 2.62615 21.3908 3.24477C22.3721 3.12909 23.331 2.86634 24.2339 2.46536C23.5692 3.46144 22.732 4.32909 21.7633 5.03007Z" fill="black" fill-opacity="0.3"></path>
-    </svg>
-  </app-icon><span _ngcontent-sc71="" class="grey-text ng-tns-c71-0">twitter</span></a><div _ngcontent-sc71="" class="action ng-tns-c71-0"><app-icon _ngcontent-sc71="" name="share:black-30" class="grey-icon ng-tns-c71-0" _nghost-sc19="" tk-name="share:black-30">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12C9 11.76 8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5C21 3.34 19.66 2 18 2C16.34 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12C3 13.66 4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.35C15.11 18.56 15.08 18.78 15.08 19C15.08 20.61 16.39 21.92 18 21.92C19.61 21.92 20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08Z" fill="black" fill-opacity="0.3"></path>
-    </svg>
-  </app-icon><span _ngcontent-sc71="" class="grey-text ng-tns-c71-0">share</span></div><a _ngcontent-sc71="" href="https://www.buymeacoffee.com/tk2rush90" appouterlink="" class="action ng-tns-c71-0" target="_blank" rel="nofollow noreferrer noopener"><app-icon _ngcontent-sc71="" name="buy-me-a-coffee:black-30" class="grey-icon ng-tns-c71-0" _nghost-sc19="" tk-name="buy-me-a-coffee:black-30">
-    <svg width="17" height="24" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M14.8436 5.5838L14.8272 5.57412L14.7891 5.5625C14.8044 5.57543 14.8236 5.58293 14.8436 5.5838Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M15.0887 7.29688L15.0703 7.30204L15.0887 7.29688Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M14.8507 5.57976C14.8484 5.57946 14.8461 5.57891 14.8438 5.57812C14.8437 5.57964 14.8437 5.58118 14.8438 5.5827C14.8464 5.58237 14.8487 5.58135 14.8507 5.57976Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M15.0703 7.29723L15.0981 7.28143L15.1084 7.27562L15.1178 7.26562C15.1002 7.2732 15.0841 7.28392 15.0703 7.29723Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M14.8893 5.62178L14.8621 5.59594L14.8438 5.58594C14.8536 5.60339 14.87 5.61626 14.8893 5.62178Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M8.07085 22.2578C8.04918 22.2672 8.03019 22.2818 8.01562 22.3004L8.03274 22.2895C8.04437 22.2788 8.06083 22.2663 8.07085 22.2578Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M12.0329 21.4815C12.0329 21.4571 12.021 21.4616 12.0239 21.5487C12.0239 21.5417 12.0268 21.5346 12.0281 21.5278C12.0297 21.5123 12.031 21.4971 12.0329 21.4815Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M11.6177 22.2578C11.596 22.2672 11.5771 22.2818 11.5625 22.3004L11.5796 22.2895C11.5912 22.2788 11.6077 22.2663 11.6177 22.2578Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M5.27686 22.4413C5.26041 22.427 5.24027 22.4176 5.21875 22.4141C5.23618 22.4225 5.25361 22.431 5.26523 22.4373L5.27686 22.4413Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M4.64793 21.8457C4.64536 21.8203 4.63755 21.7958 4.625 21.7734C4.63389 21.7965 4.64133 21.8203 4.64727 21.8444L4.64793 21.8457Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M8.86497 11.0897C8.0029 11.4587 7.02459 11.8772 5.75666 11.8772C5.22626 11.8761 4.69841 11.8034 4.1875 11.6609L5.06443 20.6643C5.09547 21.0405 5.2669 21.3914 5.54467 21.6471C5.82245 21.9029 6.18626 22.0448 6.56384 22.0448C6.56384 22.0448 7.80722 22.1093 8.22213 22.1093C8.66865 22.1093 10.0076 22.0448 10.0076 22.0448C10.3851 22.0448 10.7489 21.9027 11.0266 21.647C11.3043 21.3912 11.4757 21.0405 11.5067 20.6643L12.4459 10.7152C12.0262 10.5718 11.6026 10.4766 11.1251 10.4766C10.2992 10.4762 9.63372 10.7607 8.86497 11.0897Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M1.47656 7.24219L1.49141 7.2561L1.5011 7.26192C1.49364 7.2545 1.48542 7.24788 1.47656 7.24219Z" fill="black" fill-opacity="0.3"></path>
-      <path d="M16.5048 6.41468L16.3727 5.74859C16.2542 5.15096 15.9853 4.58625 15.3718 4.37025C15.1752 4.30114 14.9521 4.27146 14.8013 4.12841C14.6505 3.98539 14.606 3.76325 14.5711 3.55725C14.5065 3.17917 14.4458 2.80076 14.3796 2.42332C14.3225 2.09883 14.2773 1.73431 14.1284 1.43662C13.9347 1.03691 13.5327 0.803144 13.133 0.648488C12.9282 0.572029 12.7192 0.50735 12.507 0.454765C11.5083 0.1913 10.4583 0.0944382 9.43095 0.039227C8.19781 -0.0288182 6.96137 -0.00831713 5.73114 0.100573C4.81548 0.183874 3.85105 0.284611 2.98092 0.601349C2.66289 0.71726 2.33517 0.856417 2.09335 1.10213C1.79662 1.40401 1.69976 1.87089 1.9164 2.24735C2.07042 2.51469 2.3313 2.70357 2.60801 2.82853C2.96842 2.98953 3.34482 3.11204 3.73096 3.19403C4.80612 3.43166 5.91971 3.52496 7.01812 3.56469C8.23557 3.61381 9.45495 3.57399 10.6666 3.44553C10.9662 3.4126 11.2653 3.3731 11.5639 3.32705C11.9155 3.27312 12.1412 2.81335 12.0375 2.49305C11.9135 2.11014 11.5803 1.96162 11.2035 2.01942C11.148 2.02812 11.0928 2.03619 11.0372 2.04426L10.9972 2.05008C10.8696 2.06623 10.7419 2.08128 10.6143 2.09528C10.3506 2.12369 10.0863 2.14694 9.82131 2.16503C9.22786 2.20635 8.63282 2.2254 8.03809 2.22637C7.45368 2.22637 6.86896 2.2099 6.28584 2.17148C6.0198 2.15405 5.75439 2.13187 5.48964 2.10496C5.36921 2.09237 5.2491 2.07914 5.129 2.06428L5.01469 2.04976L4.98984 2.04621L4.87134 2.0291C4.62919 1.9926 4.38703 1.95064 4.14746 1.89994C4.12329 1.89457 4.10166 1.88114 4.08616 1.86182C4.07066 1.8425 4.06221 1.81848 4.06221 1.79372C4.06221 1.76896 4.07066 1.74493 4.08616 1.72562C4.10166 1.70631 4.12329 1.69286 4.14746 1.68749H4.15198C4.35959 1.64326 4.5688 1.60548 4.77867 1.57255C4.84864 1.56157 4.9188 1.55081 4.98919 1.54026H4.99112C5.12253 1.53155 5.25459 1.50798 5.38535 1.49248C6.52305 1.37414 7.6675 1.33379 8.81072 1.37172C9.36572 1.38787 9.92043 1.42048 10.4729 1.47666C10.5917 1.48893 10.7099 1.50184 10.828 1.51637C10.8732 1.52186 10.9187 1.52832 10.9643 1.53381L11.056 1.54704C11.3233 1.58687 11.5892 1.63519 11.8538 1.69202C12.2458 1.77725 12.7491 1.80502 12.9235 2.23444C12.979 2.37069 13.0042 2.52212 13.0349 2.66514L13.0739 2.84757C13.075 2.85084 13.0757 2.8542 13.0762 2.85758C13.1685 3.28808 13.261 3.71857 13.3535 4.14907C13.3603 4.18088 13.3605 4.21374 13.354 4.2456C13.3475 4.27748 13.3346 4.30765 13.3159 4.3343C13.2972 4.36093 13.2733 4.38342 13.2455 4.40039C13.2178 4.41735 13.1869 4.4284 13.1546 4.43289H13.1521L13.0956 4.44064L13.0397 4.44805C12.8628 4.47109 12.6856 4.49262 12.5083 4.51264C12.1589 4.55246 11.809 4.58689 11.4586 4.61596C10.7623 4.67385 10.0645 4.71184 9.36541 4.72993C9.00918 4.73939 8.65304 4.74382 8.29702 4.74316C6.87993 4.74205 5.46406 4.65968 4.05641 4.49648C3.90401 4.47841 3.75162 4.45903 3.59921 4.43934C3.71739 4.45452 3.51333 4.42771 3.47201 4.42191C3.37514 4.40834 3.27828 4.39425 3.18142 4.37962C2.85628 4.33085 2.5331 4.2708 2.2086 4.21816C1.81631 4.1536 1.44114 4.18589 1.0863 4.37962C0.795031 4.539 0.55929 4.78341 0.410526 5.08025C0.257483 5.39666 0.211958 5.74116 0.14351 6.08116C0.0750603 6.42114 -0.0314881 6.78695 0.00887099 7.13598C0.0957238 7.88925 0.62233 8.5014 1.37979 8.63831C2.09237 8.76745 2.80883 8.87206 3.52721 8.96118C6.34923 9.3068 9.2002 9.34814 12.0311 9.08452C12.2616 9.06299 12.4918 9.03954 12.7217 9.01413C12.7935 9.00625 12.8661 9.01451 12.9343 9.03834C13.0025 9.06217 13.0645 9.10096 13.1158 9.15184C13.1671 9.20273 13.2063 9.26445 13.2306 9.33245C13.2549 9.40048 13.2637 9.47308 13.2564 9.54493L13.1847 10.2417C13.0402 11.6496 12.8958 13.0575 12.7514 14.4652C12.6007 15.9435 12.4491 17.4218 12.2964 18.8998C12.2534 19.3162 12.2104 19.7324 12.1673 20.1484C12.126 20.5582 12.1202 20.9808 12.0424 21.3857C11.9197 22.0224 11.4886 22.4134 10.8597 22.5564C10.2834 22.6876 9.6948 22.7565 9.10388 22.7617C8.44877 22.7653 7.794 22.7362 7.13888 22.7398C6.43953 22.7437 5.58296 22.6792 5.04312 22.1586C4.5688 21.7015 4.50326 20.9856 4.43869 20.3666C4.35259 19.5471 4.26725 18.7279 4.18264 17.9086L3.70803 13.3532L3.40098 10.4057C3.3958 10.357 3.39064 10.3089 3.3858 10.2598C3.34899 9.90817 3.10005 9.56399 2.70776 9.58174C2.37198 9.59659 1.99035 9.88202 2.02974 10.2598L2.25735 12.445L2.7281 16.9652C2.86221 18.2492 2.99598 19.5333 3.12944 20.8177C3.15528 21.0637 3.17948 21.3105 3.2066 21.5565C3.35416 22.901 4.38089 23.6255 5.65237 23.8294C6.39498 23.949 7.15566 23.9735 7.90925 23.9857C8.87529 24.0013 9.85102 24.0385 10.8012 23.8634C12.2093 23.605 13.2657 22.6649 13.4165 21.2065C13.4596 20.7854 13.5026 20.3643 13.5456 19.9431C13.6888 18.55 13.8317 17.1568 13.9744 15.7635L14.4413 11.211L14.6554 9.12456C14.666 9.02109 14.7097 8.92382 14.78 8.84713C14.8502 8.77043 14.9433 8.71838 15.0454 8.69868C15.448 8.62022 15.8329 8.48622 16.1193 8.17982C16.5752 7.69197 16.6659 7.05591 16.5048 6.41468ZM1.35913 6.86477C1.36526 6.86186 1.35396 6.91448 1.34912 6.93902C1.34815 6.90189 1.35009 6.86895 1.35913 6.86477ZM1.39819 7.16698C1.40142 7.1647 1.41111 7.17763 1.42112 7.19313C1.40594 7.17891 1.39626 7.16827 1.39787 7.16698H1.39819ZM1.43662 7.21766C1.4505 7.24123 1.45793 7.25609 1.43662 7.21766V7.21766ZM1.51378 7.28029H1.51572C1.51572 7.28257 1.51927 7.28482 1.52056 7.28709C1.51842 7.28459 1.51604 7.28232 1.51346 7.28029H1.51378ZM15.0267 7.18666C14.882 7.3242 14.6641 7.38813 14.4487 7.42011C12.0336 7.7785 9.58336 7.95995 7.14177 7.87988C5.39439 7.82015 3.66541 7.62609 1.93546 7.38168C1.76595 7.35779 1.58223 7.32679 1.46567 7.20184C1.24612 6.96614 1.35396 6.49152 1.41111 6.20675C1.46341 5.94586 1.56351 5.59814 1.87379 5.561C2.3581 5.50418 2.92053 5.70855 3.39969 5.7812C3.97655 5.86923 4.55557 5.93973 5.13673 5.99268C7.61705 6.2187 10.139 6.1835 12.6084 5.85289C13.0584 5.79239 13.5069 5.72212 13.9538 5.64205C14.3519 5.57068 14.7932 5.4367 15.0338 5.849C15.1988 6.12991 15.2207 6.50573 15.1952 6.82311C15.1873 6.96139 15.1269 7.09145 15.0263 7.18666H15.0267Z" fill="black" fill-opacity="0.3"></path>
-    </svg>
-  </app-icon><span _ngcontent-sc71="" class="grey-text ng-tns-c71-0">buy me a coffee</span></a></div><article _ngcontent-sc71="" class="container ng-tns-c71-0"><app-table-of-contents _ngcontent-sc71="" _nghost-sc68="" class="ng-tns-c71-0 light ng-star-inserted" style=""><a _ngcontent-sc68="" class="indent-1 ng-star-inserted" href="/blog/post/1#%EA%B0%9C%EC%9A%94"><span _ngcontent-sc68="">#</span> 
-</a><a _ngcontent-sc68="" class="indent-1 ng-star-inserted" href="/blog/post/1#interfaces"><span _ngcontent-sc68="">#</span> 
-</a><a _ngcontent-sc68="" class="indent-2 ng-star-inserted" href="/blog/post/1#calendaroptions"><span _ngcontent-sc68="">#</span> 
-</a><a _ngcontent-sc68="" class="indent-2 ng-star-inserted" href="/blog/post/1#completedcalendaroptions"><span _ngcontent-sc68="">#</span> 
-</a><a _ngcontent-sc68="" class="indent-1 ng-star-inserted" href="/blog/post/1#calendardate"><span _ngcontent-sc68="">#</span> 
-</a><a _ngcontent-sc68="" class="indent-1 ng-star-inserted" href="/blog/post/1#calendar-%ED%95%A8%EC%88%98-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8"><span _ngcontent-sc68="">#</span> 
-</a><a _ngcontent-sc68="" class="indent-1 ng-star-inserted" href="/blog/post/1#calendar-%ED%95%A8%EC%88%98-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8"><span _ngcontent-sc68="">#</span> 
-</a><a _ngcontent-sc68="" class="indent-1 ng-star-inserted" href="/blog/post/1#%EC%8B%A4%ED%96%89%EA%B2%B0%EA%B3%BC"><span _ngcontent-sc68="">#</span> 
-</a><!----></app-table-of-contents><!----><markdown _ngcontent-sc71="" class="ng-tns-c71-0"><p>이번 포스팅은 별도의 라이브러리 없이 자바스크립트 기본 기능만으로 달력을 만들 수 있는 함수를 만드는 것.
-그러나 타입스크립트로 작성된 😁
-글 전체에 설명은 타입스크립트로 진행하지만 맨 하단에 자바스크립트용 코드도 적어놨다.</p>
-<h1 id="개요">개요</h1>
-<p>자바스크립트에서 달력을 구현할 수 있는 다양한 라이브러리들이 있지만
-나는 직접 뭔가 만들어서 사용하는 것을 더 선호하는 편이다.</p>
-<p>코딩 관련 일을 할 때면 매번 다른 디자인의 다양한 요구사항들을 처리해야하는 경우가 많은데
-라이브러리들은 제한된 기능을 제공하거나, UI랑 밀접하게 연결되어 있기 때문에
-제공하는 것을 수정하거나 그 외의 기능을 구현하기 위해 상당한 노력을 들여야하는 경우가 종종 있기 때문이다.</p>
-<p>그래서 달력을 만드는 기능도 따로 만들게 되었다.</p>
-<h1 id="interfaces">Interfaces</h1>
-<p>우선 달력 생성 옵션을 위한 인터페이스들을 만들어주자.</p>
-<h2 id="calendaroptions">CalendarOptions</h2>
-<pre><code class="language-typescript">/**
- * option to create calendar dates
- */
-export interface CalendarOptions {
-  /**
-   * set the year to get calendar dates
-   * default value is current year
-   */
-  year?: NumberLike;
-
-  /**
-   * set the month to get calendar dates
-   * default value is current month
-   * starts from `0`
-   */
-  month?: NumberLike;
-
-  /**
-   * set the starting day of week
-   * default value is `0`
-   */
-  startingDayOfWeek?: number;
-}
-</code></pre>
-<p>달력에서 특정 년/월의 날짜들을 표시하기 위해서는 '년'과 '월'이 필요하다.
-그리고 종종 한 주의 시작을 월요일부터 하게 해달라는 요청도 있었기 때문에
-달력 만드는 함수를 위한 옵션에 <code>startingDayOfWeek</code>라는 필드를 넣었다.</p>
-<h2 id="completedcalendaroptions">CompletedCalendarOptions</h2>
-<pre><code class="language-typescript">/**
- * calendar option with non-empty values
- */
-export interface CompletedCalendarOptions {
-  year: number;
-  month: number;
-  startingDayOfWeek: number;
-}
-</code></pre>
-<p>그리고 개발의 편의성을 위해 <code>CompletedCalendarOptions</code> 라는 인터페이스도 만들어준다.
-이 인터페이스는 <code>CalendarOptions</code>와 동일하지만
-모든 필드의 값이 다 채워져있어야 한다.</p>
-<h1 id="calendardate">CalendarDate</h1>
-<pre><code class="language-typescript">export class CalendarDate {
-  /**
-   * year of calendar date
-   */
-  year: number;
-
-  /**
-   * month of calendar date
-   */
-  month: number;
-
-  /**
-   * date of calendar date
-   */
-  date: number;
-
-  /**
-   * day of week of calendar date
-   */
-  dayOfWeek: number;
-
-  /**
-   * original date object
-   */
-  originalObject: Date;
-
-  /**
-   * create calendar date model
-   * @param date date
-   */
-  constructor(date: Date) {
-    this.originalObject = date;
-    this.year = date.getFullYear();
-    this.month = date.getMonth();
-    this.date = date.getDate();
-    this.dayOfWeek = date.getDay();
-  }
-}
-</code></pre>
-<p>다음 만든 것은 <code>CalendarDate</code>라는 클래스이다.
-이 클래스는 <code>Date</code> 객체를 받아서 생성되며 달력 표시에 필요한 값들을 담는다.</p>
-<h1 id="calendar-함수-타입스크립트">calendar 함수 (타입스크립트)</h1>
-<pre><code class="language-typescript">/**
- * return the date list for specific year and month
- * @param options option to create calendar
- */
-function calendar(options?: CalendarOptions): CalendarDate[] {
-  // Today's date to set initial `year`, `month` of calendar options.
-  const date = new Date();
-  const {
-    year = date.getFullYear(),
-    month = date.getMonth(),
-    startingDayOfWeek = 0
-  } = (options || {}) as CompletedCalendarOptions;
-
-  let calendarStartDate: Date;
-  const monthStartDate = new Date(year, month, 1);
-  const monthStartDayOfWeek = monthStartDate.getDay();
-
-  // calculate starting date of calendar
-  if (monthStartDayOfWeek &gt; startingDayOfWeek) {
-    calendarStartDate = new Date(year, month, 1 - (monthStartDayOfWeek - startingDayOfWeek));
-  } else if (monthStartDayOfWeek &lt; startingDayOfWeek) {
-    calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));
-  } else {
-    calendarStartDate = monthStartDate;
-  }
-
-  // create calendar dates
-  const dates: CalendarDate[] = [];
-  const calendarStartYear = calendarStartDate.getFullYear();
-  const calendarStartMonth = calendarStartDate.getMonth();
-  let calendarDate = calendarStartDate.getDate();
-
-  // create 42 dates
-  while (dates.length &lt; 42) {
-    dates.push(new CalendarDate(new Date(calendarStartYear, calendarStartMonth, calendarDate)));
-
-    calendarDate++;
-  }
-
-  return dates;
-}
-</code></pre>
-<p>그리하여 만들어진 <code>calendar()</code> 함수는 위와 같다.</p>
-<p>하나씩 한 번 뜯어보면,</p>
-<pre><code class="language-typescript">const date = new Date();
-const {
-  year = date.getFullYear(),
-  month = date.getMonth(),
-  startingDayOfWeek = 0
-} = (options || {}) as CompletedCalendarOptions;
-</code></pre>
-<p>이 부분은 옵션의 각 값들을 초기화 시켜주는 부분이다.</p>
-<p><code>options</code>가 없을 경우 빈 객체<code>{}</code>를 생성하고, <code>year</code> 값이 없으면 오늘 날짜의 년도 값을,
-<code>month</code> 값이 없으면 오늘 날짜의 월 값을,
-<code>startingDayOfWeek</code> 값이 없으면 <code>0</code>을 채워준다.</p>
-<p>그리고 타입스크립트의 이점을 사용하기 위해 이 객체를 <code>CompletedCalendarOptions</code> 타입으로 읽도록 한다.</p>
-<pre><code class="language-typescript">let calendarStartDate: Date;
-const monthStartDate = new Date(year, month, 1);
-const monthStartDayOfWeek = monthStartDate.getDay();
-
-// calculate starting date of calendar
-if (monthStartDayOfWeek &gt; startingDayOfWeek) {
-  calendarStartDate = new Date(year, month, 1 - (monthStartDayOfWeek - startingDayOfWeek));
-} else if (monthStartDayOfWeek &lt; startingDayOfWeek) {
-  calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));
-} else {
-  calendarStartDate = monthStartDate;
-}
-</code></pre>
-<p>그 다음 해준 일은 달력에서 특정 년/월에 표시될 시작일을 계산해주는 부분이다.</p>
-<p><a href="/assets/images/posts/1/calendar.png" target="_blank" rel="nofollow noreferrer noopener"><img src="/assets/images/posts/1/calendar.png" alt="달력"></a></p>
-<p>달력을 보면 위와 같이 이전 월과 다음 월의 날짜들이 일부 표시되는데,
-위 부분은 이전 월을 어디부터 표시할 지 계산하는 부분이다.</p>
-<p>우선,</p>
-<pre><code class="language-typescript">const monthStartDate = new Date(year, month, 1);
-const monthStartDayOfWeek = monthStartDate.getDay();
-</code></pre>
-<p>이 부분을 이용해 이번 월의 시작일이 무슨 요일인지를 구한다. <code>Date</code> 객체의 <code>getDay()</code>는
-현재 날짜의 요일을 반환하는 메서드로, <code>0</code>이 일요일, <code>6</code>이 토요일이다.</p>
-<p><code>CompletedCalendarOptions</code>에서 <code>startingDayOfWeek</code>를 <code>0</code>으로 초기화 시켜주는 이유는
-일반적으로 달력에서 한 주의 시작을 일요일로 잡기 때문이다.</p>
-<pre><code class="language-typescript">if (monthStartDayOfWeek &gt; startingDayOfWeek) {
-  calendarStartDate = new Date(year, month, 1 - (monthStartDayOfWeek - startingDayOfWeek));
-} else if (monthStartDayOfWeek &lt; startingDayOfWeek) {
-  calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));
-} else {
-  calendarStartDate = monthStartDate;
-}
-</code></pre>
-<p>그리고 여기서는 <code>startingDayOfWeek</code> 값에 따라 달력의 시작 날짜를 결정하는 부분이다.</p>
-<p><code>startingDayOfWeek</code>가 <code>monthStartDayOfWeek</code>와 동일한 값이라면 <code>x년 x월 1일</code>이 <code>startingDayOfWeek</code>와 같다는 말이기 때문에
-<code>monthStartDate</code>를 <code>calendarStartDate</code>로 사용해준다.</p>
-<p>만약 <code>monthStartDayOfWeek</code>가 <code>startingDayOfWeek</code>보다 크다면 아래와 같은 상황을 생각해볼 수 있다.</p>
-<p>달력이 일요일<code>0</code>부터 시작했으면 하는데 해당 월의 1일은 위에 나온 달력 사진처럼 화요일<code>2</code>인 셈이다.
-이 경우 <code>calendarStartDate</code>는 해당 월의 1일부터 차이가 나는 만큼을 빼주면 된다.</p>
-<p>반대로 <code>startingDayOfWeek</code>가 <code>monthStartDayOfWeek</code>보다 크다면 어떨까?</p>
-<p>그런 경우는 달력이 수요일<code>3</code>부터 시작했으면 좋겠는데 (이런 달력은 잘 없겠지만 .. ㅋㅋㅋ)
-해당 월의 1일이 일요일<code>0</code>인 경우를 생각해볼 수 있다.</p>
-<p>이때 그려져야할 달력의 모습은 아래와 같다.</p>
-<p><a href="/assets/images/posts/1/wed-calendar.png" target="_blank" rel="nofollow noreferrer noopener"><img src="/assets/images/posts/1/wed-calendar.png" alt="수요일 달력"></a></p>
-<p>각 요일별 값과 변수를 여기에 대입해보면</p>
-<p><a href="/assets/images/posts/1/wed-calendar-calc.png" target="_blank" rel="nofollow noreferrer noopener"><img src="/assets/images/posts/1/wed-calendar-calc.png" alt="수요일 달력 계산"></a></p>
-<p>이와 같은 모양이 나오는데, 위 그림을 보면 달력의 시작일을 구하기 위해선 <code>a + b</code>의 값을 현재 날짜에서
-빼주면 된다는 결론을 얻을 수 있다.</p>
-<p>여기서 <code>a</code> 는 <code>Date</code> 객체의 <code>getDay()</code> 메서드로 얻을 수 있는 최대값인 <code>6</code>에서 <code>startingDayOfWeek</code>를 빼면 얻을 수 있고,
-<code>b</code>는 <code>monthStartDayOfWeek</code>에 <code>1</code>을 더하면 얻을 수 있다.</p>
-<p>따라서</p>
-<pre><code class="language-typescript">calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));
-</code></pre>
-<p>와 같은 공식이 나오게 되는 것이다.</p>
-<p>이제 달력 표시에 필요한 년/월/일을 얻었으니 루프를 돌며 <code>CalendarDate</code> 클래스의 인스턴스를 생성해주면 끝이다.</p>
-<p>나는 총 42개의 <code>CalendarDate</code> 인스턴스를 생성하도록 했는데, 그 이유는 이 정도 숫자면
-어떤 경우에도 이전 월과 다음 월의 날짜까지 포함한 달력을 제대로 만들어낼 수 있기 때문이다.</p>
-<p>이 부분은 윈도우즈 달력을 보고 영감을 얻어 결정된 부분이다. 이렇게 타입스크립트로 달력을 구현하는 함수 완성 !
-이 뒤에 할 일은 이 함수로 생성된 <code>CalendarDate</code>들을 UI에 적절히 매핑해주면 되는 부분이기 때문에 생략한다.</p>
-<h1 id="calendar-함수-자바스크립트">calendar 함수 (자바스크립트)</h1>
-<pre><code class="language-javascript">/**
- * Calendar date object.
- * @param date {Date} Date object.
- */
-function CalendarDate(date) {
-  this.originalObject = date;
-  this.year = date.getFullYear();
-  this.month = date.getMonth();
-  this.date = date.getDate();
-  this.dayOfWeek = date.getDay();
-}
-
-/**
- * Create calendar dates.
- * @param options {{
- *   year: number=,
- *   month: number=,
- *   startingDayOfWeek: number=
- * }=} Options to create calendar dates.
- * @return {CalendarDate[]}
- */
-function calendar(options) {
-  // Today's date to set initial `year`, `month` of calendar options.
-  const date = new Date();
-  const {year = date.getFullYear(), month = date.getMonth(), startingDayOfWeek = 0} = (options || {});
-  
-  let calendarStartDate;
-  const monthStartDate = new Date(year, month, 1);
-  const monthStartDayOfWeek = monthStartDate.getDay();
-  
-  // calculate starting date of calendar
-  if (monthStartDayOfWeek &gt; startingDayOfWeek) {
-    calendarStartDate = new Date(year, month, 1 - (monthStartDayOfWeek - startingDayOfWeek));
-  } else if (monthStartDayOfWeek &lt; startingDayOfWeek) {
-    calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));
-  } else {
-    calendarStartDate = monthStartDate;
-  }
-  
-  // create calendar dates
-  const dates = [];
-  const calendarStartYear = calendarStartDate.getFullYear();
-  const calendarStartMonth = calendarStartDate.getMonth();
-  let calendarDate = calendarStartDate.getDate();
-  
-  // create 42 dates
-  while (dates.length &lt; 42) {
-    dates.push(new CalendarDate(new Date(calendarStartYear, calendarStartMonth, calendarDate)));
-    
-    calendarDate++;
-  }
-  
-  return dates;
-}
-</code></pre>
-<h1 id="실행결과">실행결과</h1>
-<p><a href="/assets/images/posts/1/calendar-result.png" target="_blank" rel="nofollow noreferrer noopener"><img src="/assets/images/posts/1/calendar-result.png" alt="실행 결과 "></a></p>
-</markdown><app-tag-list _ngcontent-sc71="" class="ng-tns-c71-0" _nghost-sc66=""><div _ngcontent-sc66="" class="label grey-text ng-star-inserted" style=""> Tags
-</div><!----><div _ngcontent-sc66="" class="tags"><a _ngcontent-sc66="" ripplecolor="white" appripple="" href="/blog/tags" class="tk-ripple-bounded tk-ripple-container tk-ripple-white ng-star-inserted" style=""> Javascript </a><!----><a _ngcontent-sc66="" ripplecolor="white" appripple="" href="/blog/tags" class="tk-ripple-bounded tk-ripple-container tk-ripple-white ng-star-inserted" style=""> Typescript </a><!----><!----><!----></div></app-tag-list></article></div><app-copyrights _ngcontent-sc71="" class="ng-tns-c71-0" _nghost-sc22="">Copyright 2022, tk2rush90, All rights reserved
-</app-copyrights></app-post><!----></div></main></app-blog><!----><app-toast-outlet _ngcontent-sc75="" _nghost-sc74=""><!----></app-toast-outlet></app-root>
+  </app-icon></a><!----></div></main><app-copyrights _ngcontent-sc73="" _nghost-sc22="">Copyright 2022, tk2rush90, All rights reserved
+</app-copyrights></app-not-found><!----><app-toast-outlet _ngcontent-sc75="" _nghost-sc74=""><!----></app-toast-outlet></app-root>
 <script src="runtime.981875f5d48baa06.js" type="module"></script><script src="polyfills.1e96b5fb5884ac7d.js" type="module"></script><script src="scripts.87322bffab07761e.js" defer=""></script><script src="main.a2ef2d77ff27c510.js" type="module"></script>
 
 
-<script id="serverApp-state" type="application/json">{&q;G.http://localhost:4200/assets/data/post/1.json?&q;:{&q;body&q;:{&q;title&q;:&q;타입스크립트(자바스크립트)로 달력 만들기&q;,&q;description&q;:&q;달력 생성을 위한 타입스크립트(자바스크립트) 함수&q;,&q;keywords&q;:[&q;Javascript&q;,&q;Typescript&q;,&q;달력&q;,&q;자바스크립트&q;,&q;타입스크립트&q;],&q;tags&q;:[&q;Javascript&q;,&q;Typescript&q;],&q;banner&q;:&q;/assets/images/posts/1/banner.png&q;,&q;thumbnail&q;:&q;/assets/images/posts/1/thumbnail.png&q;,&q;bannerCredit&q;:{&q;name&q;:&q;Kyrie kim&q;,&q;id&q;:&q;@kyrie3&q;},&q;publish&q;:&q;2022-02-13 00:00:00&q;,&q;id&q;:&q;1&q;,&q;contents&q;:&q;이번 포스팅은 별도의 라이브러리 없이 자바스크립트 기본 기능만으로 달력을 만들 수 있는 함수를 만드는 것.\r\n그러나 타입스크립트로 작성된 😁\r\n글 전체에 설명은 타입스크립트로 진행하지만 맨 하단에 자바스크립트용 코드도 적어놨다.\r\n\r\n# 개요\r\n\r\n자바스크립트에서 달력을 구현할 수 있는 다양한 라이브러리들이 있지만\r\n나는 직접 뭔가 만들어서 사용하는 것을 더 선호하는 편이다.\r\n\r\n코딩 관련 일을 할 때면 매번 다른 디자인의 다양한 요구사항들을 처리해야하는 경우가 많은데\r\n라이브러리들은 제한된 기능을 제공하거나, UI랑 밀접하게 연결되어 있기 때문에\r\n제공하는 것을 수정하거나 그 외의 기능을 구현하기 위해 상당한 노력을 들여야하는 경우가 종종 있기 때문이다.\r\n\r\n그래서 달력을 만드는 기능도 따로 만들게 되었다.\r\n\r\n# Interfaces\r\n\r\n우선 달력 생성 옵션을 위한 인터페이스들을 만들어주자.\r\n\r\n## CalendarOptions\r\n\r\n```typescript\r\n/**\r\n * option to create calendar dates\r\n */\r\nexport interface CalendarOptions {\r\n  /**\r\n   * set the year to get calendar dates\r\n   * default value is current year\r\n   */\r\n  year?: NumberLike;\r\n\r\n  /**\r\n   * set the month to get calendar dates\r\n   * default value is current month\r\n   * starts from `0`\r\n   */\r\n  month?: NumberLike;\r\n\r\n  /**\r\n   * set the starting day of week\r\n   * default value is `0`\r\n   */\r\n  startingDayOfWeek?: number;\r\n}\r\n```\r\n\r\n달력에서 특정 년/월의 날짜들을 표시하기 위해서는 &s;년&s;과 &s;월&s;이 필요하다.\r\n그리고 종종 한 주의 시작을 월요일부터 하게 해달라는 요청도 있었기 때문에\r\n달력 만드는 함수를 위한 옵션에 `startingDayOfWeek`라는 필드를 넣었다.\r\n\r\n## CompletedCalendarOptions\r\n\r\n```typescript\r\n/**\r\n * calendar option with non-empty values\r\n */\r\nexport interface CompletedCalendarOptions {\r\n  year: number;\r\n  month: number;\r\n  startingDayOfWeek: number;\r\n}\r\n```\r\n\r\n그리고 개발의 편의성을 위해 `CompletedCalendarOptions` 라는 인터페이스도 만들어준다.\r\n이 인터페이스는 `CalendarOptions`와 동일하지만\r\n모든 필드의 값이 다 채워져있어야 한다.\r\n\r\n# CalendarDate\r\n\r\n```typescript\r\nexport class CalendarDate {\r\n  /**\r\n   * year of calendar date\r\n   */\r\n  year: number;\r\n\r\n  /**\r\n   * month of calendar date\r\n   */\r\n  month: number;\r\n\r\n  /**\r\n   * date of calendar date\r\n   */\r\n  date: number;\r\n\r\n  /**\r\n   * day of week of calendar date\r\n   */\r\n  dayOfWeek: number;\r\n\r\n  /**\r\n   * original date object\r\n   */\r\n  originalObject: Date;\r\n\r\n  /**\r\n   * create calendar date model\r\n   * @param date date\r\n   */\r\n  constructor(date: Date) {\r\n    this.originalObject = date;\r\n    this.year = date.getFullYear();\r\n    this.month = date.getMonth();\r\n    this.date = date.getDate();\r\n    this.dayOfWeek = date.getDay();\r\n  }\r\n}\r\n```\r\n\r\n다음 만든 것은 `CalendarDate`라는 클래스이다.\r\n이 클래스는 `Date` 객체를 받아서 생성되며 달력 표시에 필요한 값들을 담는다.\r\n\r\n# calendar 함수 (타입스크립트)\r\n\r\n```typescript\r\n/**\r\n * return the date list for specific year and month\r\n * @param options option to create calendar\r\n */\r\nfunction calendar(options?: CalendarOptions): CalendarDate[] {\r\n  // Today&s;s date to set initial `year`, `month` of calendar options.\r\n  const date = new Date();\r\n  const {\r\n    year = date.getFullYear(),\r\n    month = date.getMonth(),\r\n    startingDayOfWeek = 0\r\n  } = (options || {}) as CompletedCalendarOptions;\r\n\r\n  let calendarStartDate: Date;\r\n  const monthStartDate = new Date(year, month, 1);\r\n  const monthStartDayOfWeek = monthStartDate.getDay();\r\n\r\n  // calculate starting date of calendar\r\n  if (monthStartDayOfWeek &g; startingDayOfWeek) {\r\n    calendarStartDate = new Date(year, month, 1 - (monthStartDayOfWeek - startingDayOfWeek));\r\n  } else if (monthStartDayOfWeek &l; startingDayOfWeek) {\r\n    calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));\r\n  } else {\r\n    calendarStartDate = monthStartDate;\r\n  }\r\n\r\n  // create calendar dates\r\n  const dates: CalendarDate[] = [];\r\n  const calendarStartYear = calendarStartDate.getFullYear();\r\n  const calendarStartMonth = calendarStartDate.getMonth();\r\n  let calendarDate = calendarStartDate.getDate();\r\n\r\n  // create 42 dates\r\n  while (dates.length &l; 42) {\r\n    dates.push(new CalendarDate(new Date(calendarStartYear, calendarStartMonth, calendarDate)));\r\n\r\n    calendarDate++;\r\n  }\r\n\r\n  return dates;\r\n}\r\n```\r\n\r\n그리하여 만들어진 `calendar()` 함수는 위와 같다.\r\n\r\n하나씩 한 번 뜯어보면,\r\n\r\n```typescript\r\nconst date = new Date();\r\nconst {\r\n  year = date.getFullYear(),\r\n  month = date.getMonth(),\r\n  startingDayOfWeek = 0\r\n} = (options || {}) as CompletedCalendarOptions;\r\n```\r\n\r\n이 부분은 옵션의 각 값들을 초기화 시켜주는 부분이다.\r\n\r\n`options`가 없을 경우 빈 객체`{}`를 생성하고, `year` 값이 없으면 오늘 날짜의 년도 값을,\r\n`month` 값이 없으면 오늘 날짜의 월 값을,\r\n`startingDayOfWeek` 값이 없으면 `0`을 채워준다.\r\n\r\n그리고 타입스크립트의 이점을 사용하기 위해 이 객체를 `CompletedCalendarOptions` 타입으로 읽도록 한다.\r\n\r\n```typescript\r\nlet calendarStartDate: Date;\r\nconst monthStartDate = new Date(year, month, 1);\r\nconst monthStartDayOfWeek = monthStartDate.getDay();\r\n\r\n// calculate starting date of calendar\r\nif (monthStartDayOfWeek &g; startingDayOfWeek) {\r\n  calendarStartDate = new Date(year, month, 1 - (monthStartDayOfWeek - startingDayOfWeek));\r\n} else if (monthStartDayOfWeek &l; startingDayOfWeek) {\r\n  calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));\r\n} else {\r\n  calendarStartDate = monthStartDate;\r\n}\r\n```\r\n\r\n그 다음 해준 일은 달력에서 특정 년/월에 표시될 시작일을 계산해주는 부분이다.\r\n\r\n[![달력](/assets/images/posts/1/calendar.png)](/assets/images/posts/1/calendar.png)\r\n\r\n달력을 보면 위와 같이 이전 월과 다음 월의 날짜들이 일부 표시되는데,\r\n위 부분은 이전 월을 어디부터 표시할 지 계산하는 부분이다.\r\n\r\n우선,\r\n\r\n```typescript\r\nconst monthStartDate = new Date(year, month, 1);\r\nconst monthStartDayOfWeek = monthStartDate.getDay();\r\n```\r\n\r\n이 부분을 이용해 이번 월의 시작일이 무슨 요일인지를 구한다. `Date` 객체의 `getDay()`는\r\n현재 날짜의 요일을 반환하는 메서드로, `0`이 일요일, `6`이 토요일이다.\r\n\r\n`CompletedCalendarOptions`에서 `startingDayOfWeek`를 `0`으로 초기화 시켜주는 이유는\r\n일반적으로 달력에서 한 주의 시작을 일요일로 잡기 때문이다.\r\n\r\n```typescript\r\nif (monthStartDayOfWeek &g; startingDayOfWeek) {\r\n  calendarStartDate = new Date(year, month, 1 - (monthStartDayOfWeek - startingDayOfWeek));\r\n} else if (monthStartDayOfWeek &l; startingDayOfWeek) {\r\n  calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));\r\n} else {\r\n  calendarStartDate = monthStartDate;\r\n}\r\n```\r\n\r\n그리고 여기서는 `startingDayOfWeek` 값에 따라 달력의 시작 날짜를 결정하는 부분이다.\r\n\r\n`startingDayOfWeek`가 `monthStartDayOfWeek`와 동일한 값이라면 `x년 x월 1일`이 `startingDayOfWeek`와 같다는 말이기 때문에\r\n`monthStartDate`를 `calendarStartDate`로 사용해준다.\r\n\r\n만약 `monthStartDayOfWeek`가 `startingDayOfWeek`보다 크다면 아래와 같은 상황을 생각해볼 수 있다.\r\n\r\n달력이 일요일`0`부터 시작했으면 하는데 해당 월의 1일은 위에 나온 달력 사진처럼 화요일`2`인 셈이다.\r\n이 경우 `calendarStartDate`는 해당 월의 1일부터 차이가 나는 만큼을 빼주면 된다.\r\n\r\n반대로 `startingDayOfWeek`가 `monthStartDayOfWeek`보다 크다면 어떨까?\r\n\r\n그런 경우는 달력이 수요일`3`부터 시작했으면 좋겠는데 (이런 달력은 잘 없겠지만 .. ㅋㅋㅋ)\r\n해당 월의 1일이 일요일`0`인 경우를 생각해볼 수 있다.\r\n\r\n이때 그려져야할 달력의 모습은 아래와 같다.\r\n\r\n[![수요일 달력](/assets/images/posts/1/wed-calendar.png)](/assets/images/posts/1/wed-calendar.png)\r\n\r\n각 요일별 값과 변수를 여기에 대입해보면\r\n\r\n[![수요일 달력 계산](/assets/images/posts/1/wed-calendar-calc.png)](/assets/images/posts/1/wed-calendar-calc.png)\r\n\r\n이와 같은 모양이 나오는데, 위 그림을 보면 달력의 시작일을 구하기 위해선 `a + b`의 값을 현재 날짜에서\r\n빼주면 된다는 결론을 얻을 수 있다.\r\n\r\n여기서 `a` 는 `Date` 객체의 `getDay()` 메서드로 얻을 수 있는 최대값인 `6`에서 `startingDayOfWeek`를 빼면 얻을 수 있고,\r\n`b`는 `monthStartDayOfWeek`에 `1`을 더하면 얻을 수 있다.\r\n\r\n따라서\r\n\r\n```typescript\r\ncalendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));\r\n```\r\n\r\n와 같은 공식이 나오게 되는 것이다.\r\n\r\n이제 달력 표시에 필요한 년/월/일을 얻었으니 루프를 돌며 `CalendarDate` 클래스의 인스턴스를 생성해주면 끝이다.\r\n\r\n나는 총 42개의 `CalendarDate` 인스턴스를 생성하도록 했는데, 그 이유는 이 정도 숫자면\r\n어떤 경우에도 이전 월과 다음 월의 날짜까지 포함한 달력을 제대로 만들어낼 수 있기 때문이다.\r\n\r\n이 부분은 윈도우즈 달력을 보고 영감을 얻어 결정된 부분이다. 이렇게 타입스크립트로 달력을 구현하는 함수 완성 !\r\n이 뒤에 할 일은 이 함수로 생성된 `CalendarDate`들을 UI에 적절히 매핑해주면 되는 부분이기 때문에 생략한다.\r\n\r\n# calendar 함수 (자바스크립트)\r\n\r\n```javascript\r\n/**\r\n * Calendar date object.\r\n * @param date {Date} Date object.\r\n */\r\nfunction CalendarDate(date) {\r\n  this.originalObject = date;\r\n  this.year = date.getFullYear();\r\n  this.month = date.getMonth();\r\n  this.date = date.getDate();\r\n  this.dayOfWeek = date.getDay();\r\n}\r\n\r\n/**\r\n * Create calendar dates.\r\n * @param options {{\r\n *   year: number=,\r\n *   month: number=,\r\n *   startingDayOfWeek: number=\r\n * }=} Options to create calendar dates.\r\n * @return {CalendarDate[]}\r\n */\r\nfunction calendar(options) {\r\n  // Today&s;s date to set initial `year`, `month` of calendar options.\r\n  const date = new Date();\r\n  const {year = date.getFullYear(), month = date.getMonth(), startingDayOfWeek = 0} = (options || {});\r\n  \r\n  let calendarStartDate;\r\n  const monthStartDate = new Date(year, month, 1);\r\n  const monthStartDayOfWeek = monthStartDate.getDay();\r\n  \r\n  // calculate starting date of calendar\r\n  if (monthStartDayOfWeek &g; startingDayOfWeek) {\r\n    calendarStartDate = new Date(year, month, 1 - (monthStartDayOfWeek - startingDayOfWeek));\r\n  } else if (monthStartDayOfWeek &l; startingDayOfWeek) {\r\n    calendarStartDate = new Date(year, month, 1 - (6 - startingDayOfWeek + monthStartDayOfWeek + 1));\r\n  } else {\r\n    calendarStartDate = monthStartDate;\r\n  }\r\n  \r\n  // create calendar dates\r\n  const dates = [];\r\n  const calendarStartYear = calendarStartDate.getFullYear();\r\n  const calendarStartMonth = calendarStartDate.getMonth();\r\n  let calendarDate = calendarStartDate.getDate();\r\n  \r\n  // create 42 dates\r\n  while (dates.length &l; 42) {\r\n    dates.push(new CalendarDate(new Date(calendarStartYear, calendarStartMonth, calendarDate)));\r\n    \r\n    calendarDate++;\r\n  }\r\n  \r\n  return dates;\r\n}\r\n```\r\n\r\n# 실행결과\r\n\r\n[![실행 결과 ](/assets/images/posts/1/calendar-result.png)](/assets/images/posts/1/calendar-result.png)\r\n&q;,&q;created&q;:&q;2022-02-13 00:00:00&q;},&q;headers&q;:{&q;x-powered-by&q;:[&q;Express&q;],&q;access-control-allow-origin&q;:[&q;*&q;],&q;content-type&q;:[&q;application/json; charset=utf-8&q;],&q;accept-ranges&q;:[&q;bytes&q;],&q;content-length&q;:[&q;12923&q;],&q;etag&q;:[&q;W/\&q;327b-20mBwQv3F+VpdHgXR7loLY4LYDQ\&q;&q;],&q;date&q;:[&q;Mon, 25 Apr 2022 06:01:14 GMT&q;],&q;connection&q;:[&q;keep-alive&q;],&q;keep-alive&q;:[&q;timeout=5&q;]},&q;status&q;:200,&q;statusText&q;:&q;OK&q;,&q;url&q;:&q;http://localhost:4200/assets/data/post/1.json&q;}}</script></body><!-- This page was prerendered with Angular Universal --></html>
+<script id="serverApp-state" type="application/json">{}</script></body><!-- This page was prerendered with Angular Universal --></html>

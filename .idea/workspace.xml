@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8004d880-1ca6-47ec-a114-7d1e70873965" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/push.js" beforeDir="false" afterPath="$PROJECT_DIR$/push.js" afterDir="false" />
-    </list>
+    <list default="true" id="8004d880-1ca6-47ec-a114-7d1e70873965" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +50,7 @@
       <updated>1650788994449</updated>
       <workItem from="1650788995688" duration="6576000" />
       <workItem from="1650845939793" duration="2164000" />
-      <workItem from="1650862440802" duration="1524000" />
+      <workItem from="1650862440802" duration="2306000" />
     </task>
     <task id="LOCAL-00001" summary="Blog renewal">
       <created>1650795848534</created>
