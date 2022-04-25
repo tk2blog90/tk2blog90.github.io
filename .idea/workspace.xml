@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8004d880-1ca6-47ec-a114-7d1e70873965" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main.cc5b70d9718a4817.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime.981875f5d48baa06.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3rdpartylicenses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/404/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/404/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/list/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/list/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/post/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/post/1/index.html" afterDir="false" />
@@ -15,15 +11,20 @@
       <change beforePath="$PROJECT_DIR$/blog/search/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/search/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/tags/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.original.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.original.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.0ca994cac18e912b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime.79f75b0314b5d258.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/push.js" beforeDir="false" afterPath="$PROJECT_DIR$/push.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +33,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="28EkBEN72xBvdwhHN54sM7EzSxQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,7 +45,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "14.17.0",
+    "javascript.nodejs.core.library.typings.version": "14.17.0",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2019.3\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -53,7 +60,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650788994449</updated>
-      <workItem from="1650788995688" duration="6557000" />
+      <workItem from="1650788995688" duration="6576000" />
+      <workItem from="1650845939793" duration="1701000" />
     </task>
     <task id="LOCAL-00001" summary="Blog renewal">
       <created>1650795848534</created>
@@ -76,14 +84,18 @@
       <option name="project" value="LOCAL" />
       <updated>1650816744181</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fix markdown service bug.">
+      <created>1650817832931</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650817832931</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -91,6 +103,7 @@
     <MESSAGE value="Blog renewal" />
     <MESSAGE value="Remove draft posts." />
     <MESSAGE value="Fix angular prerender bug." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix angular prerender bug." />
+    <MESSAGE value="Fix markdown service bug." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix markdown service bug." />
   </component>
 </project>
