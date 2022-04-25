@@ -14,6 +14,10 @@ function runCommand(command) {
       reject();
     });
     
+    process.on('message', (message, sendHandler) => {
+      console.log(`command message: "${command}"`, message, sendHandler);
+    });
+    
     process.on('exit', (code, signal) => {
       console.log(`command exit: "${command}"`, code, signal);
       resolve();
