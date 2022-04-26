@@ -12,6 +12,13 @@
       <guid>https://tk2blog90.github.io/blog/post/5</guid>
     </item>
     <item>
+      <title>Merge images with Javascript</title>
+      <link>https://tk2blog90.github.io/blog/post/6</link>
+      <description>Use canvas element to stack up images</description>
+      <pubDate>Mon, 25 Apr 2022 15:04:00 GMT</pubDate>
+      <guid>https://tk2blog90.github.io/blog/post/6</guid>
+    </item>
+    <item>
       <title>Solve "Angular Universal doesn't wait for HTTP calls end"</title>
       <link>https://tk2blog90.github.io/blog/post/4</link>
       <description>It's mostly your fault</description>
