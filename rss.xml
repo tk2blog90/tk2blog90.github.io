@@ -2,63 +2,70 @@
 <rss version="2.0">
   <channel>
     <title>LOGLOG</title>
-    <link>https://tk2blog90.github.io</link>
+    <link>https://tk2blog90.github.io/</link>
     <description>Welcome to the full-stack developer's personal space with GitHub pages</description>
     <item>
       <title>Capture the HTML Element from Chrome browser</title>
-      <link>https://tk2blog90.github.io/blog/post/8</link>
+      <link>https://tk2blog90.github.io/blog/post/8/</link>
       <description>The Node screenshot feature of Chrome browser</description>
       <pubDate>Fri, 13 May 2022 12:52:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/8</guid>
+      <guid>https://tk2blog90.github.io/blog/post/8/</guid>
+    </item>
+    <item>
+      <title>Set and Test Social Meta tags for Twitter and Open Graph</title>
+      <link>https://tk2blog90.github.io/blog/post/9/</link>
+      <description>Share your pages with more details</description>
+      <pubDate>Fri, 13 May 2022 12:52:00 GMT</pubDate>
+      <guid>https://tk2blog90.github.io/blog/post/9/</guid>
     </item>
     <item>
       <title>A trip to Jeju Island</title>
-      <link>https://tk2blog90.github.io/blog/post/7</link>
+      <link>https://tk2blog90.github.io/blog/post/7/</link>
       <description>My first trip to Jeju Island</description>
       <pubDate>Tue, 03 May 2022 11:03:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/7</guid>
+      <guid>https://tk2blog90.github.io/blog/post/7/</guid>
     </item>
     <item>
       <title>Merge images with Javascript</title>
-      <link>https://tk2blog90.github.io/blog/post/6</link>
+      <link>https://tk2blog90.github.io/blog/post/6/</link>
       <description>Use canvas element to stack up images</description>
       <pubDate>Tue, 26 Apr 2022 10:18:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/6</guid>
+      <guid>https://tk2blog90.github.io/blog/post/6/</guid>
     </item>
     <item>
       <title>Build the blog on GitHub pages with Angular</title>
-      <link>https://tk2blog90.github.io/blog/post/5</link>
+      <link>https://tk2blog90.github.io/blog/post/5/</link>
       <description>SEO fully supported GitHub pages with Angular</description>
       <pubDate>Mon, 25 Apr 2022 15:04:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/5</guid>
+      <guid>https://tk2blog90.github.io/blog/post/5/</guid>
     </item>
     <item>
       <title>Solve "Angular Universal doesn't wait for HTTP calls end"</title>
-      <link>https://tk2blog90.github.io/blog/post/4</link>
+      <link>https://tk2blog90.github.io/blog/post/4/</link>
       <description>It's mostly your fault</description>
       <pubDate>Mon, 25 Apr 2022 04:49:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/4</guid>
+      <guid>https://tk2blog90.github.io/blog/post/4/</guid>
     </item>
     <item>
       <title>Heroku를 이용한 Node.js 무제한 무료 호스팅 사용 방법</title>
-      <link>https://tk2blog90.github.io/blog/post/3</link>
+      <link>https://tk2blog90.github.io/blog/post/3/</link>
       <description>New Relic을 이용해 Heroku 앱 깨우기</description>
       <pubDate>Sun, 27 Feb 2022 15:00:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/3</guid>
+      <guid>https://tk2blog90.github.io/blog/post/3/</guid>
     </item>
     <item>
       <title>How to prevent calling api twice when using Angular Universal?</title>
-      <link>https://tk2blog90.github.io/blog/post/2</link>
+      <link>https://tk2blog90.github.io/blog/post/2/</link>
       <description>Usage example of TransferState</description>
       <pubDate>Sat, 19 Feb 2022 15:00:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/2</guid>
+      <guid>https://tk2blog90.github.io/blog/post/2/</guid>
     </item>
     <item>
       <title>타입스크립트(자바스크립트)로 달력 만들기</title>
-      <link>https://tk2blog90.github.io/blog/post/1</link>
+      <link>https://tk2blog90.github.io/blog/post/1/</link>
       <description>달력 생성을 위한 타입스크립트(자바스크립트) 함수</description>
       <pubDate>Sat, 12 Feb 2022 15:00:00 GMT</pubDate>
-      <guid>https://tk2blog90.github.io/blog/post/1</guid>
+      <guid>https://tk2blog90.github.io/blog/post/1/</guid>
     </item>
   </channel>
 </rss>
