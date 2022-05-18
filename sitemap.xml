@@ -2,27 +2,33 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tk2blog90.github.io/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0000</priority>
   </url>
   <url>
     <loc>https://tk2blog90.github.io/blog/list/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0000</priority>
   </url>
   <url>
     <loc>https://tk2blog90.github.io/blog/search/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0000</priority>
   </url>
   <url>
     <loc>https://tk2blog90.github.io/blog/tags/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0000</priority>
+  </url>
+  <url>
+    <loc>https://tk2blog90.github.io/blog/post/10/</loc>
+    <lastmod>2022-05-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tk2blog90.github.io/blog/post/9/</loc>
