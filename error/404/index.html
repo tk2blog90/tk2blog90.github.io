@@ -75,7 +75,21 @@
     </svg>
   </app-icon></a><!----></div></main><app-copyrights _ngcontent-sc79="" _nghost-sc22="">Copyright 2022, tk2rush90, All rights reserved
 </app-copyrights></app-not-found><!----><app-toast-outlet _ngcontent-sc82="" _nghost-sc80=""><!----></app-toast-outlet><app-modal-outlet _ngcontent-sc82="" _nghost-sc81=""><!----></app-modal-outlet></app-root>
-<script src="runtime.79f75b0314b5d258.js" type="module"></script><script src="polyfills.41b82a5fe60a8b8f.js" type="module"></script><script src="scripts.63f5819e1bee997d.js" defer=""></script><script src="main.8d8916fc9591a171.js" type="module"></script>
+
+  <script>
+    const theme = localStorage.getItem('01267225-52b2-408f-9040-713c9a14821c');
+  
+    if (theme) {
+      const _theme = JSON.parse(theme);
+
+      if (_theme === 'dark') {
+        document.body.classList.add('theme-dark');
+      } else {
+        document.body.classList.add('theme-light');
+      }
+    }
+  </script>
+<script src="runtime.79f75b0314b5d258.js" type="module"></script><script src="polyfills.1e96b5fb5884ac7d.js" type="module"></script><script src="scripts.63f5819e1bee997d.js" defer=""></script><script src="main.709d43b3543dedda.js" type="module"></script>
 
 
 <script id="serverApp-state" type="application/json">{}</script></body><!-- This page was prerendered with Angular Universal --></html>
